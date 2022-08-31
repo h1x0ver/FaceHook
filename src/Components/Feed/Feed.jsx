@@ -3,7 +3,9 @@ import CreatePost from "./CreatePost";
 
 const Feed = () => {
     return (
-        <div></div>
+        <div className={''}>
+            <CreatePost/>
+        </div>
     );
 };
 

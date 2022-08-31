@@ -1,11 +1,13 @@
 import React from 'react';
-import '../../Style/Post.css'
+import './Post.css'
 const CreatePost = () => {
     return (
         <div className={'post__box'}>
             <div className="post__items">
-                <h1>hello</h1>
+                {/*<i className="fa-solid fa-user post__icon"></i>*/}
+                {/*<a href="" className={'whats__new'}></a>*/}
             </div>
+
 
         </div>
     );

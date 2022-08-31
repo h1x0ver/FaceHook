@@ -9,15 +9,17 @@
 ::-webkit-scrollbar {
     width: 5px;
 }
+
 ::-webkit-scrollbar-track {
     background-color: #f1f1f1;
 }
+
 ::-webkit-scrollbar-thumb {
     background-color: rgb(179, 179, 179);
 }
 
 .sidebarWrapper {
-    padding: 20px;
+    padding: 20px 0px;
 }
 
 
@@ -26,25 +28,34 @@
     margin: 0;
     list-style: none;
 }
-.sidebarList li:hover {
+
+.sidebarListItem:hover {
     background-color: #dbdbdc;
     border-radius: 10px;
 
 }
 
-.sidebar li{
+.sidebarListItem {
+    transition: .3s ease-in-out;
+    cursor: pointer;
+
+}
+
+.sidebar li {
     padding-top: 8px;
     padding-bottom: 8px;
     text-align: center;
     align-items: center;
 }
-.sidebar li i{
+
+.sidebar li i {
     margin-right: 10px;
 }
+
 .sidebarListItem {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    padding: 10px;
 }
 
 .sidebarIcon {
@@ -69,20 +80,20 @@
     list-style: none;
 }
 
-@media only screen and (max-width:720px) {
+@media only screen and (max-width: 720px) {
     .sidebar {
         display: none;
     }
 }
 
-@media only screen and (max-width:1040px) {
+@media only screen and (max-width: 1040px) {
     .sidebar {
         display: none;
     }
 
 }
 
-@media only screen and (max-width:540px) {
+@media only screen and (max-width: 540px) {
     .sidebar {
         display: none;
     }

@@ -1,4 +1,4 @@
-import '../../Style/LSideBar.css'
+import './LSideBar.css'
 
  function RightBar() {
     return (

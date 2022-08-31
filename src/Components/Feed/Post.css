@@ -1,0 +1,25 @@
+.post__box{
+    width: 70%;
+    height: 120px;
+    background-color: #FFFFFF;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
+.post__items{
+
+}
+.post__icon{
+    font-size: 28px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+.whats__new{
+    padding: 10px 40px;
+    background-color: red;
+}

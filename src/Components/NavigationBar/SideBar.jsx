@@ -1,11 +1,6 @@
-import '../../Style/LSideBar.css'
-import {
-    Chat,
-    Group,
-    Bookmark,
-    HelpOutline,
-    School,
-} from "@material-ui/icons";
+import './LSideBar.css'
+import {HelpOutline} from "@material-ui/icons";
+import {Link} from 'react-router-dom'
 
 export default function Sidebar() {
     return (
@@ -16,15 +11,15 @@ export default function Sidebar() {
                         <i className="material-icons">account_circle</i>
                         <span className="sidebarListItemText">User Name</span>
                     </li>
-                    <li className="sidebarListItem">
-                        <i className="material-icons">question_answer</i>
-
-                        <span className="sidebarListItemText">Messages</span>
-                    </li>
+                    <Link to={'chat'}>
+                        <li className="sidebarListItem">
+                            <i className="material-icons">question_answer</i>
+                            <span className="sidebarListItemText">Messages</span>
+                        </li>
+                    </Link>
 
                     <li className="sidebarListItem">
                         <i className="material-icons">group_add</i>
-
                         <span className="sidebarListItemText">Groups</span>
                     </li>
                     <li className="sidebarListItem">

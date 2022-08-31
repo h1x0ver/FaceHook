@@ -46,6 +46,10 @@ nav {
     padding: 10px 2.8vw;
     border-radius: 5px;
     color: #66676c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .icon i {

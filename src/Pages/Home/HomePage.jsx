@@ -10,7 +10,7 @@ const HomePage = () => {
                 <div className="col-lg-2 col-sm-4">
                     <LSideBar/>
                 </div>
-                <div className="col-lg-6 col-md-12 col-sm-12 ">
+                <div className="col-lg-6 col-md-12 col-sm-12 center">
                     <Feed/>
                 </div>
                 <div className="col-lg-2 text-end ">
