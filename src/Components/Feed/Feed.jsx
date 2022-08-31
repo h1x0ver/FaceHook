@@ -1,11 +1,9 @@
 import React from 'react';
-import Story from "./Story";
+import CreatePost from "./CreatePost";
 
 const Feed = () => {
     return (
-        <div>
-            <Story/>
-        </div>
+        <div></div>
     );
 };
 
