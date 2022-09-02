@@ -6,6 +6,7 @@
     border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
+
 }
 .post__items{
 
@@ -19,7 +20,131 @@
     border-radius: 50%;
 }
 
-.whats__new{
-    padding: 10px 40px;
-    background-color: red;
+.whats__new img{
+    padding: 10px;
 }
+hr{
+    margin: 0;
+}
+.myButton{
+    background-color: rgba(128, 128, 128, 0.17);
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 8px 150px;
+}
+.create__post__btn{
+    padding: 7px 180px;
+    margin-left: 12px;
+    background-color: rgba(117, 117, 117, 0.18);
+    cursor: pointer;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    transition: 0.2s ease-in-out;
+    align-items: center;
+
+}
+.create__post__btn:hover{
+    background-color: rgba(153, 153, 153, 0.32);
+}
+.post{
+    width:550px;
+    background:#fff;
+    border-radius:10px;
+    padding:10px;
+    margin:10px;
+}
+
+.post .post-top{
+    display:flex;
+    align-items: center;
+    padding:10px;
+}
+
+.post .post-top .dp{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    overflow:hidden;
+}
+
+.post .post-top .dp > img{
+    width:100%;
+    cursor:pointer;
+}
+
+.post .post-top .post-info{
+    margin-left:10px;
+    font-weight: bold;
+}
+
+.post .post-top .post-info .name{
+    cursor:pointer;
+    font-size:16px;
+}
+
+.post .post-top .post-info .time{
+    font-size:12px;
+    cursor:pointer;
+}
+
+.post .post-top i{
+    margin-left:auto;
+    cursor: pointer;
+}
+
+.post .post-top > input{
+    height:40px;
+    padding:5px 10px;
+    border-radius:25px;
+    outline:none;
+    border:none;
+    flex:1;
+    background:#eee;
+    margin-left:10px;
+}
+
+.post .post-content{
+    font-size:16px;
+    font-weight:normal;
+    padding:10px;
+}
+.post{
+    margin:30px auto;
+
+}
+
+.post .post-content > img{
+    width:100%;
+    margin:5px 0px;
+}
+
+.post .post-bottom{
+
+    display:flex;
+    justify-content: space-between;
+    padding:5px 5px 0px 5px;
+}
+
+.post .post-bottom .action{
+    padding:10px;
+    border-radius:10px;
+    transition: .3s ease-in;
+    cursor: pointer;
+    margin-left: 200px;
+
+}
+
+.action i {
+
+}
+
+.post .post-bottom .action:hover{
+    background:#eee;
+}
+
+.post.create .post-bottom > .action{
+    color: teal;
+}
+
+

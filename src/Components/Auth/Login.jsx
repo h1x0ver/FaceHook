@@ -1,7 +1,10 @@
 import React from 'react';
 import './Login.css'
+import {useNavigate} from "react-router-dom";
 
 const Login = () => {
+    const router = useNavigate();
+
     return (
         <div className="container">
             <div className="left">
@@ -13,10 +16,10 @@ const Login = () => {
                 <form action="">
                     <input type="text" placeholder="Email addess or phone number"/>
                     <input type="password" placeholder="Password"/>
-                    <a href="" className="loginBtn">Log In</a>
-                    <a href="" className="forget">Forgotten password?</a>
+                    <a className="loginBtn">Log In</a>
+                    <a className="forget">Forgotten password?</a>
                     <div className="sign-up">
-                        <a href="" className="signupBtn">Create New Account</a>
+                        <a onClick={() => router('/register')} className="signupBtn">Create New Account</a>
                     </div>
                 </form>
                 <p><b>Create a Page</b> for a celebrity, band or business.</p>

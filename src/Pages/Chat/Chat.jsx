@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Style/Chat.css'
+import '../../Assets/Style/Chat.css'
 
 const Chat = () => {
     return (
