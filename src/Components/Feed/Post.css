@@ -51,6 +51,8 @@ hr{
     width:550px;
     background:#fff;
     border-radius:10px;
+    display: flex;
+    flex-wrap: wrap;
     padding:10px;
     margin:10px;
 }
@@ -110,7 +112,6 @@ hr{
     padding:10px;
 }
 .post{
-    margin:30px auto;
 
 }
 
@@ -122,29 +123,31 @@ hr{
 .post .post-bottom{
 
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
     padding:5px 5px 0px 5px;
 }
-
-.post .post-bottom .action{
+.action{
     padding:10px;
     border-radius:10px;
     transition: .3s ease-in;
     cursor: pointer;
     margin-left: 200px;
-
+}
+.container{
+    margin-top: 10px!important;
 }
 
 .action i {
 
 }
 
-.post .post-bottom .action:hover{
+.action:hover{
     background:#eee;
 }
-
-.post.create .post-bottom > .action{
+.post-bottom > .action{
     color: teal;
 }
+
+
 
 

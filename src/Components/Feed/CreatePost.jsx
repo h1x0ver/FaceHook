@@ -7,26 +7,33 @@ const CreatePost = () => {
     const [modal, setModal] = useState(false)
 
     return (
-        <div className="post create">
-            <div className="post-top">
-                <div className="dp">
-                    <img src={usericon} alt=""/>
-                </div>
-                <a className={'create__post__btn'} onClick={() => setModal(true)} >
-                    Whats new?
-                </a>
-                <MyModal visible={modal} setVisible={setModal}>
+        <div className={'container'}>
+            <div className="row">
+                <div className="col-lg-6 col-md-6 col-sm-4">
+                    <div className="post create">
+                        <div className="post-top">
+                            <div className="dp">
+                                <img src={usericon} alt=""/>
+                            </div>
+                            <a className={'create__post__btn'} onClick={() => setModal(true)} >
+                                Whats new?
+                            </a>
+                            <MyModal visible={modal} setVisible={setModal}>
 
 
-                </MyModal>
-            </div>
-            <hr/>
-            <div className="post-bottom">
-                <div className="action">
-                    <i className="fa fa-image"></i>
-                    <span>Photo/Video</span>
+                            </MyModal>
+                        </div>
+                        <hr/>
+                        <div className="post-bottom">
+                            <div className="action">
+                                <i className="fa fa-image"></i>
+                                <span>Photo/Video</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
     );
 };

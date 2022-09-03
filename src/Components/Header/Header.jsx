@@ -34,7 +34,7 @@ const Header = () => {
                         add friend
                     </a>
                     <div className="buttons">
-                        <a><i className='material-icons'>add</i></a>
+                        <a><i className='material-icons add'>add</i></a>
                         <a><i className='material-icons'>messenger</i></a>
                         <a><i className='material-icons'>notifications</i></a>
                         <a><i className='material-icons'>arrow_drop_down</i></a>
