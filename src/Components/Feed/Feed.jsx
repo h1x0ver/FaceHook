@@ -1,10 +1,11 @@
 import React from 'react';
-import CreatePost from "./CreatePost";
+import './Feed.css'
+import StoryReel from "./StoryReel";
 
 const Feed = () => {
     return (
-        <div className={''}>
-            <CreatePost/>
+        <div className='feed'>
+            <StoryReel/>
         </div>
     );
 };

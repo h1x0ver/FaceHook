@@ -1,21 +1,18 @@
 import React from 'react';
-import LSideBar from "../../Components/NavigationBar/SideBar";
 import Feed from "../../Components/Feed/Feed";
-import RightBar from "../../Components/NavigationBar/RightBar";
+import Sidebar from "../../Components/SiderBars/Sidebar";
 
 const HomePage = () => {
     return (
-        <div className={'container-fluid'}>
-            <div className="row justify-content-between">
-                <div className="col-lg-2 col-sm-4">
-                    <LSideBar/>
-                </div>
-                <div className="col-lg-6 col-md-12 col-sm-12 center">
-                    <Feed/>
-                </div>
-                <div className="col-lg-2 text-end ">
-                    <RightBar/>
-                </div>
+        <div className={'app__body'}>
+            <div className="home__sidebar">
+                <Sidebar/>
+            </div>
+            <div className="feed__body">
+                <Feed/>
+            </div>
+            <div className="rightbar">
+
             </div>
         </div>
     );
