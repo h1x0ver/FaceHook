@@ -1,47 +1,65 @@
 import React from 'react';
 import './Header.css'
-import {Link} from "react-router-dom";
+import SearchIcon from '@material-ui/icons/Search';
+import HomeIcon from '@material-ui/icons/Home';
+import Group from '@material-ui/icons/Group';
+import Message from '@material-ui/icons/Message';
+import AddIcon from '@material-ui/icons/Add';
+import ForumIcon from '@material-ui/icons/Forum';
+import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
+import {Avatar} from "@material-ui/core";
+import { IconButton} from "@material-ui/core";
+
+
 
 const Header = () => {
     return (
-        <header>
-            <nav>
-                <div className='nav__left'>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/100px-Facebook_f_logo_%282019%29.svg.png'/>
-                    <div className='nav__search'>
-                        <i className="material-icons">search</i>
-                        <input className="search__input" type='text' placeholder="Search Facebook"/>
-                    </div>
+        <div className={'header'}>
+            {/*header left*/}
+            <div className="header__left">
+                <img
+                    src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/100px-Facebook_f_logo_%282019%29.svg.png'
+                    alt="gg"/>
+                <div className="header__input">
+                    <SearchIcon/>
+                    <input placeholder={'Search Facebook'} type="text"/>
+
+                </div>
+            </div>
+            {/*header middle*/}
+            <div className="header__middle">
+                <div className="header__option header__option--active">
+                    <HomeIcon fontSize="large"/>
+                </div>
+                <div className="header__option">
+                    <Group fontSize="large"/>
+                </div>
+                <div className="header__option">
+                    <Message fontSize="large"/>
+                </div>
+            </div>
+
+            {/*header right*/}
+            <div className="header__right">
+
+                <IconButton>
+                    <AddIcon/>
+                </IconButton>
+
+                <IconButton>
+                    <ForumIcon/>
+                </IconButton>
+
+                <IconButton>
+                    <NotificationsActiveIcon/>
+                </IconButton>
+
+                <div className="header__info">
+                    <Avatar/>
                 </div>
 
-                <div className='nav__mid'>
-                    <Link to='/'>
-                        <a className='icon'>
-                            <i className='material-icons'>home</i>
-                        </a>
-                    </Link>
-
-                    <a className='icon'>
-                        <i className='material-icons'>people</i>
-                    </a>
-                    <a className='icon'>
-                        <i className='material-icons'>groups</i>
-                    </a>
-                </div>
-
-                <div className="nav__right">
-                    <a className="avatar">
-                        add friend
-                    </a>
-                    <div className="buttons">
-                        <a><i className='material-icons add'>add</i></a>
-                        <a><i className='material-icons'>messenger</i></a>
-                        <a><i className='material-icons'>notifications</i></a>
-                        <a><i className='material-icons'>arrow_drop_down</i></a>
-                    </div>
-                </div>
-            </nav>
-        </header>
+            </div>
+        </div>
     );
 };
 
