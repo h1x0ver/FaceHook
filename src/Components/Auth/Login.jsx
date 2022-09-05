@@ -13,7 +13,7 @@ const Login = () => {
             </div>
 
             <div className="right">
-                <form action="">
+                <form className='login__form'>
                     <input type="text" placeholder="Email addess or phone number"/>
                     <input type="password" placeholder="Password"/>
                     <a className="loginBtn">Log In</a>

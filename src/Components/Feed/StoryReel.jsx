@@ -17,7 +17,7 @@ const StoryReel = () => {
             <Story
                 image='https://media.nature.com/lw800/magazine-assets/d41586-019-00653-5/d41586-019-00653-5_16459152.jpg'
                 profileSrc='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS6qgNkqnT_u92SDRczQ__R2ETzFz00ZFTyg&usqp=CAU'
-                title='Anar Balaca'
+                title='Anar'
             />
             <Story
                 image='https://www.gettingsmart.com/wp-content/uploads/2014/11/coding-graphic-481x335-1.jpg'

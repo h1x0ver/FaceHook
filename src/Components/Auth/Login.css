@@ -10,7 +10,7 @@
     margin-top: 100px;
 }
 
-.left .right, form{
+.left .right, .login__form{
     display: flex;
     align-content: center;
     justify-content: center;
@@ -41,7 +41,7 @@
     width: 400px;
 }
 
-form{
+.login__form{
     background-color: #fff;
     border-radius: 10px;
     width: 400px;
@@ -51,7 +51,7 @@ form{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
 }
 
-form input{
+.login__form input{
     width: 100%;
     padding: 15px;
     margin-bottom: 10px;
@@ -135,7 +135,7 @@ form input{
 }
 
 @media(max-width:500px){
-    form{
+    .login__form{
         width:350px;
         align-content: center;
         align-items: center;
@@ -147,7 +147,7 @@ form input{
         height: 95px;
     }
 
-    form{
+    .login__form{
         width: 250px;
         align-content: center;
         align-items: center;
@@ -159,7 +159,7 @@ form input{
         display: none;
     }
 
-    form input, .forget, .loginBtn, .signupBtn{
+    .login__form input, .forget, .loginBtn, .signupBtn{
         font-size: 12px;
     }
 }

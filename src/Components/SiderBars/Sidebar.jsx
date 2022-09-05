@@ -24,7 +24,10 @@ const Sidebar = () => {
                 Icon={Save}
                 title='Saved Post'
             />
-
+            <SidebarRow
+                Icon={Save}
+                title='Saved Post'
+            />
         </div>
     );
 };
