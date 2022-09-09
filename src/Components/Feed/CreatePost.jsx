@@ -3,9 +3,13 @@ import './CreatePost.css'
 import {Avatar} from "@material-ui/core";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import {InsertEmoticon, PhotoLibrary} from "@material-ui/icons";
+import MyModal from "../UI/Modal/MyModal";
 
 
 const CreatePost = () => {
+
+
+    const [modal, setModal] = useState(false)
 
     const [input, setInput] = useState('')
     const [imageUrl, setImageUrl] = useState('')
@@ -21,7 +25,8 @@ const CreatePost = () => {
 
 
     return (
-        <div className='createPost'>
+        <div className='createPost col-12'>
+
             <div className="createPost__top">
                 <Avatar/>
                 <form>
@@ -30,13 +35,12 @@ const CreatePost = () => {
                         onChange={(e) => setInput(e.target.value)}
                         className='createPost__input'
                         placeholder='Whats on your mind ?'
-                    />
-                    <input
-                        value={imageUrl}
-                        onChange={(e) => setImageUrl(e.target.value)}
-                        placeholder='image URL'
+                        onClick={() => setModal(true)}
                     />
 
+                    <MyModal visible={modal} setVisible={setModal}>
+                        <h3>Create Post</h3>
+                    </MyModal>
                     <button type='submit' onClick={handleSubmit}>
                         hidden submit
                     </button>

@@ -6,7 +6,7 @@ const Login = () => {
     const router = useNavigate();
 
     return (
-        <div className="container">
+        <div className="custom__container">
             <div className="left">
                 <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt=""/>
                 <p>Facebook helps you connect and share with the people in your life.</p>

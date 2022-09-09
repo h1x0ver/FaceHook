@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Header.css'
 import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
@@ -13,6 +13,18 @@ import { IconButton} from "@material-ui/core";
 
 
 const Header = () => {
+    const [inputVisible,setInputVisible] = useState(false);
+    const [hamburgerActive,setHamgurgerActive] = useState(false)
+    const inputVisibleHandler=(e)=>{
+        e.target.classList.toggle("active")
+    }
+    const hamburgerVisibleHandler=(e)=>{
+        if(e.target.parentElement.parentElement.lastElementChild.style.display=="flex"){
+            e.target.parentElement.parentElement.lastElementChild.style.display="none"
+        }else{
+            e.target.parentElement.parentElement.lastElementChild.style.display="flex"
+        }
+    }
     return (
         <div className={'header'}>
             {/*header left*/}
@@ -21,7 +33,7 @@ const Header = () => {
                     src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/100px-Facebook_f_logo_%282019%29.svg.png'
                     alt="gg"/>
                 <div className="header__input">
-                    <SearchIcon/>
+                    <SearchIcon id="searchIcon" onClick={inputVisibleHandler}/>
                     <input placeholder={'Search Facebook'} type="text"/>
 
                 </div>
@@ -58,6 +70,19 @@ const Header = () => {
                     <Avatar/>
                 </div>
 
+            </div>
+            <div className="header__hamburger">
+                <div className="header__hamburger__wrapper" onClick={hamburgerVisibleHandler}>
+                    <i className="fa-solid fa-bars"></i>
+                </div>
+                <div className="header__hamburger__body">
+                    <ul>
+                        <li>Home</li>
+                        <li>Home</li>
+                        <li>Home</li>
+                        <li>Home</li>
+                    </ul>
+                </div>
             </div>
         </div>
     );

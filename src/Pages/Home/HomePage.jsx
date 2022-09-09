@@ -1,21 +1,23 @@
 import React from 'react';
 import Feed from "../../Components/Feed/Feed";
 import Sidebar from "../../Components/SiderBars/Sidebar";
-import RightSideBar from "../../Components/SiderBars/RightSideBar";
 import "../../Assets/Style/Home.css"
+import Rightbar from "../../Components/SiderBars/Rightbar";
 const HomePage = () => {
     return (
-        <div className={'app__body row'}>
-            <div className="home__sidebar col-3">
-                <Sidebar/>
-            </div>
-            <div className="feed__body col-6">
-                <Feed/>
-            </div>
-            <div className="rightbar col-3">
-                <RightSideBar/>
-            </div>
-        </div>
+          <div style={{marginTop:'20px'}} className="container-fluid">
+              <div  className="row">
+                  <div className="col-lg-4 leftSideBarWrapper">
+                      <Sidebar/>
+                  </div>
+                  <div className="col-lg-4 feed__wrapper">
+                      <Feed/>
+                  </div>
+                  <div className="col-lg-4 rightSideBar d-flex justify-content-end">
+                      <Rightbar/>
+                  </div>
+              </div>
+          </div>
     );
 };
 

@@ -7,6 +7,7 @@
     justify-content: space-between;
     position: sticky;
     background-color: white;
+    align-items: center;
     z-index: 100;
     top: 0;
     box-shadow: 0px 5px 8px -9px rgba(0,0,0,0.75);
@@ -80,7 +81,45 @@
 .header__info > h4{
     margin-left: 10px;
 }
+.header__hamburger{
+}
 
 .header__right{
     display: flex;
 }
+.active{
+    display: block;
+
+}
+.header__hamburger__body{
+    position: absolute;
+    top: 75px;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.3s linear;
+    display: none;
+    justify-content: center;
+    background-color: red;
+}
+.header__hamburger__body ul li{
+    margin-bottom: 20px;
+    width: 100%;
+    border: solid;
+}
+@media only screen and (max-width: 992px) {
+    .header__middle{
+        display: none;
+    }
+    .header__right{
+        display: none;
+    }
+    .header__left input{
+        display: none;
+    }
+    .header__hamburger{
+        display: block;
+    }
+}
+
+
