@@ -1,25 +1,32 @@
 import React from 'react';
 import './Assets/Style/App.css'
 import {BrowserRouter, Routes, Route,} from "react-router-dom";
-import Header from "./Components/Header/Header";
+import Base from './Router/BaseRoutes'
 import HomePage from "./Pages/Home/HomePage";
-import Chat from "./Pages/Chat/Chat";
-import Login from "./Components/Auth/Login";
-import Register from "./Components/Auth/Register";
 import FriendsPage from "./Pages/Friends/FriendsPage";
 import FriendsRequest from "./Pages/Friends/FriendsRequest";
+import Profile from "./Pages/Profile/Profile";
+import SavedPost from "./Pages/SavedPost/SavedPost";
+import Register from './Pages/Auth/Register'
+import Login from "./Pages/Auth/Login";
+import ResetPassword from "./Components/ResetPassword";
+import ProfileSettings from "./Pages/Profile/ProfileSettings";
 
 const App = () => {
     return (
             <BrowserRouter>
-                <Header/>
                 <Routes>
-                    <Route path="/" element={<HomePage />}/>
-                    <Route path="/chat" element={<Chat/>}/>
-                    <Route path="/login" element={<Login/>}/>
                     <Route path="/register" element={<Register/>}/>
-                    <Route path="/friends" element={<FriendsPage/>}/>
-                    <Route path='/FriendsRequest' element={<FriendsRequest/>}/>
+                    <Route path="/login" element={<Login/>}/>
+
+                    <Route path='/' element={<Base><HomePage/></Base>}/>
+                    <Route path='/friends' element={<Base><FriendsPage/></Base>}/>
+                    <Route path='/friendrequest' element={<Base><FriendsRequest/></Base>}/>
+                    <Route path='/profile' element={<Base><ProfileSettings/></Base>}/>
+                    <Route path='/profile' element={<Base><Profile/></Base>}/>
+                    <Route path='/reset' element={<Base><ResetPassword/></Base>}/>
+                    <Route path='/reset' element={<Base><ResetPassword/></Base>}/>
+                    <Route path='/SavedPost' element={<Base><SavedPost/></Base>}/>
                 </Routes>
             </BrowserRouter>
     );

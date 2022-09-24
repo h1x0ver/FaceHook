@@ -10,18 +10,18 @@ const FriendsSidebar = () => {
     const navigate = useNavigate()
     return (
         <div className='friendsSidebar mt-3'>
-            <RightbarRow
-                src={Group}
-                title='Main'
-            />
-            <RightbarRow
-                src={Group}
-                title='Friend Reques'
-            />
-            <RightbarRow
-                src={Group}
-                title='All Friends'
-            />
+            <ul>
+                <li onClick={() => navigate('/friends')}>
+                    <RightbarRow src={Group} title='Main'/>
+                </li>
+                <li onClick={() => navigate('/friendrequest')}>
+                    <RightbarRow src={Group} title='Friend Reques'/>
+                </li>
+                <li>
+                    <RightbarRow src={Group} title='All Friends'/>
+                </li>
+            </ul>
+
 
         </div>
     );

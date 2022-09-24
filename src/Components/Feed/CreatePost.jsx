@@ -57,10 +57,6 @@ const CreatePost = () => {
                     <h3>Photo</h3>
                 </div>
 
-                <div className="createPost__option">
-                    <InsertEmoticon style={{color: 'orange'}}/>
-                    <h3>Feeling/Activity</h3>
-                </div>
             </div>
         </div>);
 };

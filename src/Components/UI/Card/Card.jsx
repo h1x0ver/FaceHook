@@ -1,7 +1,15 @@
 import React from 'react';
 import './Card.css'
 
-const Card = ({userimage,username,position,posts,followers,following,}) => {
+const Card = ({userimage,username,position,posts,followers,following,fbutton,sbuttton}) => {
+
+    const handleClick=(e)=>{
+           console.log("this is working fine");
+           e.preventDefault();
+           e.target.style.background = 'grey'
+           console.log(e.target);
+       }
+
     return (
         <div className='custom__card'>
             <div className="img__box">
@@ -17,8 +25,8 @@ const Card = ({userimage,username,position,posts,followers,following,}) => {
                         <h3>{following}<br/><span>Following</span></h3>
                     </div>
                     <div className="action__btn">
-                        <button>Follow</button>
-                        <button>Delete</button>
+                        <button onClick={handleClick}>{fbutton}</button>
+                        <button onClick={handleClick}>{sbuttton}</button>
                     </div>
                 </div>
             </div>

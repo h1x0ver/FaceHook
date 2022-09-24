@@ -100,7 +100,7 @@
     transition: 0.3s linear;
     display: none;
     justify-content: center;
-    background-color: red;
+    background-color: gray;
 }
 .header__hamburger__body ul li{
     margin-bottom: 20px;

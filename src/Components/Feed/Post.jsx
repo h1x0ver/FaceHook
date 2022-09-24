@@ -5,7 +5,8 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 
-const Post = ({profilePic, image, username, timestamp, message}) => {
+const Post = ({profilePic, image, username, message}) => {
+
     return (
         <div className='post'>
             <div className="post__top">
@@ -16,6 +17,7 @@ const Post = ({profilePic, image, username, timestamp, message}) => {
             </div>
 
             <div className="post__bottom">
+
                 <p>{message}</p>
             </div>
 
