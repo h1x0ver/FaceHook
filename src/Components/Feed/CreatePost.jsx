@@ -1,11 +1,6 @@
 import React, {useState} from 'react';
 import './CreatePost.css'
 import {Avatar} from "@material-ui/core";
-import VideocamIcon from "@material-ui/icons/Videocam";
-import {InsertEmoticon, PhotoLibrary} from "@material-ui/icons";
-import MyModal from "../UI/Modal/MyModal";
-
-
 const CreatePost = () => {
 
 
@@ -38,23 +33,15 @@ const CreatePost = () => {
                         onClick={() => setModal(true)}
                     />
 
-                    <MyModal visible={modal} setVisible={setModal}>
-                        <h3>Create Post</h3>
-                    </MyModal>
-                    <button type='submit' onClick={handleSubmit}>
-                        hidden submit
-                    </button>
+
                 </form>
             </div>
             <div className="createPost__bottom">
                 <div className="createPost__option">
-                    <VideocamIcon style={{color: 'red'}}/>
-                    <h3>Video</h3>
+                    <input type='file'/>
                 </div>
-
                 <div className="createPost__option">
-                    <PhotoLibrary style={{color: 'green'}}/>
-                    <h3>Photo</h3>
+                    <input type='submit'/>
                 </div>
 
             </div>

@@ -5,7 +5,7 @@ import "../../Assets/Style/Home.css"
 import Rightbar from "../../Components/SiderBars/Rightbar";
 const HomePage = () => {
     return (
-          <div style={{marginTop:'20px'}} className="container-fluid">
+          <div  className="container-fluid bg__home">
               <div  className="row">
                   <div className="col-lg-4 leftSideBarWrapper">
                       <Sidebar/>

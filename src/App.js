@@ -22,9 +22,8 @@ const App = () => {
                     <Route path='/' element={<Base><HomePage/></Base>}/>
                     <Route path='/friends' element={<Base><FriendsPage/></Base>}/>
                     <Route path='/friendrequest' element={<Base><FriendsRequest/></Base>}/>
-                    <Route path='/profile' element={<Base><ProfileSettings/></Base>}/>
+                    <Route path='/profileSettings' element={<Base><ProfileSettings/></Base>}/>
                     <Route path='/profile' element={<Base><Profile/></Base>}/>
-                    <Route path='/reset' element={<Base><ResetPassword/></Base>}/>
                     <Route path='/reset' element={<Base><ResetPassword/></Base>}/>
                     <Route path='/SavedPost' element={<Base><SavedPost/></Base>}/>
                 </Routes>

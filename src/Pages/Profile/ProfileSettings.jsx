@@ -12,7 +12,6 @@ function ProfileSettings() {
 
     useEffect(()=>
     {
-
         setPd(decodeToken(JSON.parse(localStorage.getItem("Utoken"))))
     },[])
 
