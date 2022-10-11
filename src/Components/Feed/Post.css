@@ -32,9 +32,20 @@
     padding: 15px 25px;
 }
 
+.post__image {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    margin-bottom: 15px;
+}
 
 .post__image > img {
-    width: 100%;
+    border-radius: 15px;
+    width: 90%;
+    height:auto;
+    object-fit: cover;
 }
 
 

@@ -9,10 +9,6 @@ class AuthService extends HttpClient {
     GetAll(body){
         return this.get("", body);
     }
-    //:id
-    GetById(body) {
-        return this.get(":id", body)
-    }
 }
 
 export const authService = new AuthService();

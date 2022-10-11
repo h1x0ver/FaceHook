@@ -7,7 +7,7 @@ import Modal from '../UI/Modal/Modal'
 
 import axios from 'axios'
 
-const Feed = () => {
+const  Feed = () => {
     const [post,setPost] = useState([])
     useEffect(()=>
     {
@@ -29,7 +29,9 @@ const Feed = () => {
         <div className='feed'>
             <StoryReel/>
             <CreatePost/>
-            <Modal/>
+            <Modal
+                setPost={setPost}
+            />
             {
                 post&&post.map(e=>
                 {

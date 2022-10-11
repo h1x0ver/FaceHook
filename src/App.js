@@ -11,6 +11,7 @@ import Register from './Pages/Auth/Register'
 import Login from "./Pages/Auth/Login";
 import ResetPassword from "./Components/ResetPassword";
 import ProfileSettings from "./Pages/Profile/ProfileSettings";
+import Messanger from "./Pages/Messanger/Messanger";
 
 const App = () => {
     return (
@@ -18,7 +19,7 @@ const App = () => {
                 <Routes>
                     <Route path="/register" element={<Register/>}/>
                     <Route path="/login" element={<Login/>}/>
-
+                    <Route path='/messanger' element={<Messanger/>}/>
                     <Route path='/' element={<Base><HomePage/></Base>}/>
                     <Route path='/friends' element={<Base><FriendsPage/></Base>}/>
                     <Route path='/friendrequest' element={<Base><FriendsRequest/></Base>}/>

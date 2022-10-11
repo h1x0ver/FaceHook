@@ -3,7 +3,7 @@ import './Post.css'
 import {Avatar} from "@material-ui/core";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
-import ThumbDownIcon from "@material-ui/icons/ThumbDown";
+
 
 const Post = ({profilePic, image, username, message,like}) => {
 

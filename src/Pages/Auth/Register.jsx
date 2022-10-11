@@ -3,13 +3,10 @@ import '../../Assets/Style/Register.css'
 import {Formik,Form,Field} from 'formik'
 import {useNavigate} from 'react-router-dom'
 import regsVal from '../../Validation/regsValidation'
-import Load from '../../Components/Loader/Loader.jsx'
 import {authService} from "../../APIs/Services/Auth";
 
 function Registers() {
     const navigate = useNavigate()
-    const [load,setLoad] = useState(false)
-
     const handleRegister = (x) => {
         console.log("onSubmit event is wokrking!")
 
@@ -22,20 +19,17 @@ function Registers() {
             confirmPassword: x.confirmPassword
         };
 
-        setLoad(true)
 
         authService.register(newuser).then(() => {
             navigate('/')
         })
 
         setTimeout(() => {
-            setLoad(false)
         }, 4000);
     }
 
     return (
         <div className='reg-form'>
-            {load&& <Load/>}
             <Formik
                 initialValues={
                     {

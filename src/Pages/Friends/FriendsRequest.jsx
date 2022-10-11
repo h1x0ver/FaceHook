@@ -3,7 +3,6 @@ import '../../Components/SiderBars/FriendsSidebar.css'
 import '../../Assets/Style/Friend.css'
 
 import FriendsSidebar from "../../Components/SiderBars/FriendsSidebar";
-import AccessFriendCard from "../../Components/Friends/AccessFriendCard";
 
 
 const FriendsRequest = () => {
@@ -15,7 +14,7 @@ const FriendsRequest = () => {
                 </div>
                 <div className="row col-10">
                     <div className='access__friend__card'>
-                        <AccessFriendCard/>
+
                     </div>
                 </div>
             </div>

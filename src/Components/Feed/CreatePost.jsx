@@ -40,9 +40,7 @@ const CreatePost = () => {
                 <div className="createPost__option">
                     <input type='file'/>
                 </div>
-                <div className="createPost__option">
-                    <input type='submit'/>
-                </div>
+
 
             </div>
         </div>);
