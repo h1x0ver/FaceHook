@@ -37,9 +37,9 @@ const  Feed = () => {
                 {
                     return(
                         <Post
+
                             profilePic={`https://localhost:44347/img/${e.user.profileImage}`}
                             message={`${e.title}`}
-                            timestamp='This is a timestamp'
                             username={e.user.username}
                             image={`https://localhost:44347/img/${e.imageName}`}
                             like={e.likeCount}

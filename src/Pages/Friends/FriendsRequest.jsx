@@ -1,24 +1,53 @@
 import React from 'react';
-import '../../Components/SiderBars/FriendsSidebar.css'
+import Sidebar from "../../Components/SiderBars/Sidebar";
 import '../../Assets/Style/Friend.css'
-
-import FriendsSidebar from "../../Components/SiderBars/FriendsSidebar";
-
+import  image from '../../images/logo.png'
 
 const FriendsRequest = () => {
     return (
-        <div className="container-fluid">
+        <div className="container-fluid bg__home">
             <div className="row">
-                <div style={{marginTop: '20px'}} className="friend__sidbar col-2">
-                    <FriendsSidebar/>
+                <div className="col-lg-3 leftSideBarWrapper">
+                    <Sidebar/>
                 </div>
-                <div className="row col-10">
-                    <div className='access__friend__card'>
+                <div className="col-lg-9 user-friends">
+                    <div className="row">
+
+                        <div className='mytabel'>
+
+                            <div className='profilimg tabs'>
+                                <img src={image}/>
+                            </div>
+
+                            <div className='profilname tabs'>
+                                <h1>salam</h1>
+                                <p>sagol brat</p>
+                            </div>
+
+                            <div className='profilsurname tabs'>
+                                <h1>salam</h1>
+                                <p>sagol brat</p>
+
+                            </div>
+
+                            <div className='profilsurname tabs'>
+                                <h1>salam</h1>
+                                <p>sagol brat</p>
+
+                            </div>
+
+                            <div className='profilsurname tabs'>
+                                <button>Salam</button>
+                            </div>
+
+
+                        </div>
 
                     </div>
                 </div>
-            </div>
 
+
+            </div>
         </div>
     );
 };

@@ -1,7 +1,58 @@
-.friend__sidbar {
-    background-color: #fff;
-    border-radius: 20px;
-    margin-left: 10px;
-    height: 100vh;
+.user-friends {
+    margin-top: 24px;
 }
 
+
+.mytabel{
+    display:flex;
+    width: 80%;
+    height: 80px;
+}
+
+.mytabel .tabs{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.mytabel .profilimg{
+    display: flex;
+    align-items: center;
+}
+.mytabel .tabs img{
+    width: 40%;
+    height: 100%;
+    vertical-align: bottom;
+    border-radius: 100%;
+}
+.mytabel .tabs h1{
+    margin-bottom: 5px;
+}
+
+.mytabel .tabs p{
+    margin-bottom: 0px;
+}
+
+.mytabel .profilsurname{
+    align-items: center;
+    justify-content: center;
+}
+.mytabel .profilsurname button{
+    width: 100%;
+}
+
+@media (max-width: 760px) {
+    .mytabel{
+        display:flex;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .mytabel .tabs{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+
+    }
+}
