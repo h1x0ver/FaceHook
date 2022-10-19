@@ -27,6 +27,7 @@ const Friends = () => {
                     <Sidebar/>
                 </div>
                 <div className="col-lg-9 user-friends">
+                    <input type="text" className='friens__search' placeholder='serach'/>
                     <div className="row">
                         {friends && friends.map(u => <div className="col-lg-4 col-md-6">
                             <FriendCard

@@ -1,11 +1,13 @@
 import React from 'react';
 import './Sidebar.css'
 import SidebarRow from "./SidebarRow";
-import Group from '@material-ui/icons/Group';
 import ChatIcon from '@material-ui/icons/Chat';
 import Save from "@material-ui/icons/Bookmark";
 import {useNavigate} from "react-router-dom";
 import {SettingsApplicationsOutlined} from "@material-ui/icons";
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
 
 const Sidebar = () => {
     const route = useNavigate()
@@ -40,19 +42,19 @@ const Sidebar = () => {
                 </div>
                 <li onClick={() => route('/add-friends')}>
                     <SidebarRow
-                        Icon={Group}
+                        Icon={PersonAddAltIcon}
                         title='Add friends'
                     />
                 </li>
                 <li onClick={() => route('/requests')}>
                     <SidebarRow
-                        Icon={Group}
+                        Icon={ContactMailIcon}
                         title='Friend Request'
                     />
                 </li>
                 <li onClick={() => route('/friends')}>
                     <SidebarRow
-                        Icon={Group}
+                        Icon={SupervisedUserCircleIcon}
                         title='All Friends'
                     />
                 </li>

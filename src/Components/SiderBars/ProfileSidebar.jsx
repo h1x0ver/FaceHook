@@ -1,12 +1,17 @@
 import React from 'react';
 import './Sidebar.css'
 import SidebarRow from "./SidebarRow";
-import Group from '@material-ui/icons/Group';
+import CodeOffIcon from '@mui/icons-material/CodeOff';
 import {useNavigate} from "react-router-dom";
-import {ChangeHistory, ChangeHistorySharp, Home, SettingsApplicationsOutlined} from "@material-ui/icons";
+import {ChangeHistorySharp, Home} from "@material-ui/icons";
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
 const Sidebar = () => {
     const route = useNavigate()
+    const handleLogOut = () => {
+        localStorage.removeItem("Utoken")
+        route("/login")
+    }
 
     return (
         <div className={'sidebar'} style={{height:"100vh", backgroundColor:"white"}}>
@@ -18,29 +23,37 @@ const Sidebar = () => {
                     />
                 </li>
 
-                <li onClick={() => route('/chat')}>
+                <li onClick={() => route('/reset')}>
                     <SidebarRow
-                        Icon={ChangeHistory}
+                        Icon={ManageAccountsIcon}
                         title='Change-Password'
                     />
 
                 </li>
-                <li onClick={() => route('/savedpost')}>
+                <li onClick={() => route('/profilesettings')}>
                     <SidebarRow
-                        Icon={ChangeHistorySharp}
+                        Icon={ManageAccountsIcon}
                         title='Change-Profile-Data'
                     />
 
                 </li>
                 <hr/>
-                <div style={{marginTop: "50px"}}>
 
-                </div>
+
                 <li onClick={() => route('/')}>
                     <SidebarRow
                         Icon={Home}
                         title='Home-Page'
                     />
+                </li>
+                <hr/>
+
+                <li onClick={handleLogOut}>
+                    <SidebarRow
+                        Icon={CodeOffIcon}
+                        title='Logout'
+                    />
+
                 </li>
 
 

@@ -4,6 +4,7 @@ import {Formik,Form,Field} from 'formik'
 import {useNavigate} from 'react-router-dom'
 import regsVal from '../../Validation/regsValidation'
 import {authService} from "../../APIs/Services/Auth";
+import logo from '../../images/FaceHook Logo.png'
 
 function Registers() {
     const navigate = useNavigate()
@@ -46,9 +47,11 @@ function Registers() {
             >
                 {({errors,touched})=>
                     (
-
                         <Form className="reg-part">
                             <div className="naming">
+                                <div className='logo-container'>
+                                    <img src={logo} alt=""/>
+                                </div>
                                 <div className="rg-field">
                                     <label className='rg-lbl' htmlFor="firstname">firstname</label>
                                     <Field className='rg-inp' id='firstname' placeholder="Enter your name" name='firstname'/>

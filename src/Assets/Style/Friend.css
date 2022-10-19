@@ -24,3 +24,12 @@
     color: black;
     border-radius: 5px;
 }
+.friens__search{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+}

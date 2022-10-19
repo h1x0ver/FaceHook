@@ -1,0 +1,10 @@
+.image__container{
+    display: flex;
+    object-fit: cover;
+    justify-content: center;
+    width: 100%;
+}
+.image__container img{
+    height: 400px;
+    width: 700px;
+}

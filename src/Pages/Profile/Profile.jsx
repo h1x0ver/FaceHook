@@ -22,13 +22,18 @@ const Profile = () => {
                             <img
                                 src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGVuc3xlbnwwfHwwfHw%3D&w=1000&q=80"
                                 alt="Farid-Junior"/>
-                            <div className="duv">
-                                <h4 className='f-l'>Huseyn Quliyev</h4>
-                                <p className='f-l'>huseynmg@code.edu.az</p>
-                                <div className="f-l btn" onClick={()=> setOpen(true)}>Create History</div>
-                            </div>
-
                         </div>
+                       <div className="usr-inf">
+                           <div className="f-l">
+                               <h4 className='f-l'>Huseyn Quliyev</h4>
+                           </div>
+                           <div className="e-m">
+                               <p className='f-l'>huseynmg@code.edu.az</p>
+                           </div>
+                           <div className="f-l">
+                               <div className="f-l btn" onClick={()=> setOpen(true)}>Create History</div>
+                           </div>
+                       </div>
 
                         <h3>Add Friends</h3>
                         <hr/>

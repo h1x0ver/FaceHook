@@ -6,7 +6,7 @@ import {decodeToken} from "react-jwt";
 import ProfileSidebar from "../../Components/SiderBars/ProfileSidebar";
 
 
-const ProfileSettings = () => {
+const ProfileSettings = ({id}) => {
     const [pd, setPd] = useState(null)
     const navigate = useNavigate()
 
@@ -32,29 +32,35 @@ const ProfileSettings = () => {
                             <Formik
                                 enableReinitialize={true}
                                 initialValues={{
-                                    prname: pd?.name,
-                                    prsurname: pd?.surname,
-                                    prmail: pd?.email,
-                                    prphone: pd?.phone
+                                    prname: "",
+                                    prsurname: "",
+                                    prusername: "",
+                                    prmail: "",
+
                                 }}
+
+
                                 onSubmit={(x) => {
                                     let editUser =
                                         {
                                             id: pd.id,
-                                            name: x.prname,
-                                            surName: x.prsurname,
-                                            username: pd.username,
+                                            firstname: x.prname,
+                                            lastname: x.prsurname,
+                                            username: x.prusername,
                                             email: x.prmail,
-                                            phoneNumber: x.prphone
                                         }
 
+                                    console.log(editUser)
 
-                                    let url = "http://ejtacmalik-001-site1.btempurl.com/api/Accounts/update"
+                                    let token = JSON.parse(localStorage.getItem("Utoken"))
+                                    let url = "https://localhost:44347/api/User/userUpdate"
                                     fetch(url, {
-                                        method: 'post',
+                                        method: 'POST',
                                         headers:
                                             {
                                                 "Content-Type": "application/json",
+                                                Authorization:"Bearer "+token
+
                                             },
                                         body: JSON.stringify(editUser)
                                     }).then(resp => {
@@ -67,25 +73,26 @@ const ProfileSettings = () => {
                                 <Form className='p-form'>
 
                                     <div className="p-field">
-                                        <label className='p-label' htmlFor="p-name">Name</label>
-                                        <Field className='p-inp' id='p-name' name='prname'/>
+                                        <label className='p-label' htmlFor="firstname">Firstname</label>
+                                        <Field className='p-inp' id='firstname' name='prname'/>
                                     </div>
 
                                     <div className="p-field">
-                                        <label className='p-label' htmlFor="p-name">Surname</label>
-                                        <Field className='p-inp' id='p-name' name='prsurname'/>
+                                        <label className='p-label' htmlFor="lastname">Lastname</label>
+                                        <Field className='p-inp' id='lastname' name='prsurname'/>
                                     </div>
 
                                     <div className="p-field">
-                                        <label className='p-label' htmlFor="p-name">E-mail</label>
-                                        <Field className='p-inp' id='p-name' name='prmail'/>
+                                        <label className='p-label' htmlFor="email">E-mail</label>
+                                        <Field className='p-inp' id='email' name='prmail'/>
+                                    </div>
+                                    <div className="p-field">
+                                        <label className='p-label' htmlFor="username">Username</label>
+                                        <Field className='p-inp' id='username' name='prusername'/>
                                     </div>
 
-                                    <div className="p-field">
-                                        <label className='p-label' htmlFor="p-name">Phone</label>
-                                        <Field className='p-inp' id='p-name' name='prphone'/>
-                                    </div>
                                     <input type="submit" value='Edit' className='p-sub'/>
+
 
                                 </Form>
                             </Formik>

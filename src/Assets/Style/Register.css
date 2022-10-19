@@ -6,11 +6,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('https://wallpaperaccess.com/full/340452.png');
+    background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+.logo-container img{
+    width: 350px;
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
 .reg-part
 {
     width: 90%;

@@ -9,17 +9,8 @@ import axios from "axios";
 
 const Post = ({profilePic, image, username, message,like,id}) => {
 
-    // const [save,setSave] = useState(true)
-    // const [postId, setPostId] = useState(id)
-
     const savePost = () => {
-        // console.log('ay blet')
-        // const formdata = new FormData()
-        // formdata.append('postId', postId)
-        // formdata.append('isSave', save)
-        // for (var pair of formdata.entries()) {
-        //     console.log(pair[0]+ ', ' + pair[1]);
-        // }
+
         const token = JSON.parse(localStorage.getItem("Utoken"))
         fetch(`https://localhost:44347/api/Post/Save/${id}`,{
           method:"POST",
