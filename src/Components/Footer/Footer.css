@@ -1,0 +1,27 @@
+.footer-basic {
+    padding:10px 0;
+    background-color:#ffffff;
+    color:#4b4c4d;
+    margin-top: 20px;
+}
+
+.footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+}
+
+.footer-basic .copyright {
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+    margin-bottom:0;
+}

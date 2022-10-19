@@ -7,13 +7,13 @@ import Profile from "./Pages/Profile/Profile";
 import SavedPost from "./Pages/SavedPost/SavedPost";
 import Register from './Pages/Auth/Register'
 import Login from "./Pages/Auth/Login";
-import ResetPassword from "./Components/ResetPassword";
-import ProfileSettings from "./Pages/Profile/ProfileSettings";
 import Messanger from "./Pages/Messanger/Messanger";
 import AllUsers from "./Pages/Friends/AllUsers";
 import Friends from "./Pages/Friends/Friends";
 import FriendsRequest from "./Pages/Friends/FriendsRequest";
 import ProtectedRoutes from "./Router/ProtectedRoutes";
+import ProfileSettings from "./Pages/Profile/ProfileSettings";
+import ResetPassword from "./Pages/Profile/ResetPassword";
 
 const App = () => {
 
@@ -36,14 +36,14 @@ const App = () => {
                     <Route element={<ProtectedRoutes auth={auth}/>}>
                     <Route path='/messanger' element={<Messanger/>}/>
                     <Route path='/' element={<Base><HomePage/></Base>}/>
-                    <Route path='/settings' element={<Base><ProfileSettings/></Base>}/>
                     <Route path='/profile' element={<Base><Profile/></Base>}/>
-                    <Route path='/reset' element={<Base><ResetPassword/></Base>}/>
                     <Route path='/users' element={<Base><AllUsers/></Base>}/>
                     <Route path='/add-friends' element={<Base><AllUsers/></Base>}/>
                     <Route path='/friends' element={<Base><Friends/></Base>}/>
                     <Route path='/requests' element={<Base><FriendsRequest/></Base>}/>
-                    <Route path='/SavedPost' element={<Base><SavedPost/></Base>}/>
+                    <Route path='/savedPost' element={<Base><SavedPost/></Base>}/>
+                    <Route path='/reset' element={<Base><ResetPassword/></Base>}/>
+                    <Route path='/profileSettings' element={<Base><ProfileSettings/></Base>}/>
                     </Route>
                 </Routes>
             </Router>

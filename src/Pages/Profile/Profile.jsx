@@ -4,6 +4,7 @@ import '../../Assets/Style/Profile.css'
 import UserSlider from "../../Components/Profile/UserSlider";
 import CreatePost from "../../Components/Feed/CreatePost";
 import Modal from "../../Components/UI/Modal/Modal";
+import ProfileSettings from "./ProfileSettings";
 
 
 const Profile = () => {
