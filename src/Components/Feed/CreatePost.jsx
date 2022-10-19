@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './CreatePost.css'
 import {Avatar} from "@material-ui/core";
-const CreatePost = () => {
+const   CreatePost = ({setOpen}) => {
 
 
     const [modal, setModal] = useState(false)
@@ -30,7 +30,7 @@ const CreatePost = () => {
                         onChange={(e) => setInput(e.target.value)}
                         className='createPost__input'
                         placeholder='Whats on your mind ?'
-                        onClick={() => setModal(true)}
+                        onClick={() => setOpen(true)}
                     />
 
 

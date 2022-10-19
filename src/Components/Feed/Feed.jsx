@@ -9,6 +9,8 @@ import axios from 'axios'
 
 const  Feed = () => {
     const [post,setPost] = useState([])
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
     useEffect(()=>
     {
         let token = JSON.parse(localStorage.getItem("Utoken"))
@@ -17,19 +19,18 @@ const  Feed = () => {
                 headers:{
                     Authorization:"Bearer "+token
                 }
-            })
-
-            .then(resp=> setPost(resp.data))
+            }).then(resp=> setPost(resp.data))
     },[])
-    console.log(post)
 
 
 
     return (
         <div className='feed'>
             <StoryReel/>
-            <CreatePost/>
+            <CreatePost setOpen={setOpen}/>
             <Modal
+                open={open}
+                setOpen={setOpen}
                 setPost={setPost}
             />
             {
@@ -37,12 +38,13 @@ const  Feed = () => {
                 {
                     return(
                         <Post
-
+                            key={e.id}
                             profilePic={`https://localhost:44347/img/${e.user.profileImage}`}
                             message={`${e.title}`}
                             username={e.user.username}
                             image={`https://localhost:44347/img/${e.imageName}`}
                             like={e.likeCount}
+                            id={e.id}
                         />
                     )
                 })

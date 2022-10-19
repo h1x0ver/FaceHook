@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('https://images.pexels.com/photos/1162519/pexels-photo-1162519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-image: url('https://wallpaperaccess.com/full/340452.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -28,7 +28,7 @@
     padding-left: 20px;
     justify-content: center;
     flex-direction: column;
-    background-color: #f9716a8c;
+    background-color: rgba(169, 166, 166, 0.55);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -37,7 +37,8 @@
 {
     width: 50%;
     min-height: 70vh;
-    background-color: #f9716aa4;
+   background-color: rgba(169, 166, 166, 0.73);
+
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     display: flex;
@@ -96,7 +97,7 @@
     border-radius: 5px;
     font-size: 20px;
     outline: none;
-    background-color: #f9706a;
+    background-color: #000000;
     color: white;
     cursor: pointer;
     font-weight: bold;
@@ -107,13 +108,15 @@
 {
     font-size: 25px;
     transition: 0.3s;
-    background-color: rgb(67, 165, 110);
+    background-color: rgb(255, 255, 255);
+    color: black;
 }
 
 .inpp:hover
 {
     font-size: 20px;
-    background-color: #d85851;
+    background-color: #ffffff;
+    color: black;
 }
 
 .inpp
@@ -127,7 +130,7 @@
 
 .reg-err
 {
-    color: red;
+    color: #7c0000;
     font-size: 15px;
     padding: 0;
     background-color: white;

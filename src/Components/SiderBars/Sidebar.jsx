@@ -60,7 +60,7 @@ const Sidebar = () => {
                 <div style={{marginTop: "70px"}}>
 
                 </div>
-                <li onClick={() => route('/settings')}>
+                <li onClick={() => route('/profile')}>
                     <SidebarRow
                         Icon={SettingsApplicationsOutlined}
                         title='settings'

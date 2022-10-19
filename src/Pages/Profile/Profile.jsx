@@ -1,54 +1,56 @@
-import React from 'react';
+import React, {useState} from 'react';
+import ProfileSidebar from "../../Components/SiderBars/ProfileSidebar";
 import '../../Assets/Style/Profile.css'
+import UserSlider from "../../Components/Profile/UserSlider";
 import CreatePost from "../../Components/Feed/CreatePost";
-import Post from "../../Components/Feed/Post";
+import Modal from "../../Components/UI/Modal/Modal";
+
 
 const Profile = () => {
+    const [post, setPost] = useState([])
+    const [open, setOpen] = useState(false);
     return (
-        <div className="header__wrapper">
-            <header></header>
-            <div className="cols__container">
-                <div className="left__col">
-                    <div className="img__container">
-                        <img src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGVuc3xlbnwwfHwwfHw%3D&w=1000&q=80" alt="Anna Smith"/>
-                        <span></span>
-                    </div>
-                    <h2>Huseyn Quliyev</h2>
-                    <p>Back End deweloper</p>
-                    <p>huseynmg@code.edu.az</p>
-
-                    <div className='uls'>
-                        <ul className="about">
-                            <li><span>4,073</span>Followers</li>
-                            <li><span>322</span>Following</li>
-                            <li><span>200,543</span>Attraction</li>
-                        </ul>
-                    </div>
-
-                    <div className="content">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam
-                            erat volutpat. Morbi imperdiet, mauris ac auctor dictum, nisl
-                            ligula egestas nulla.
-                        </p>
-                        <button className='btn btn-success'>edit profile</button>
-
-                        <ul>
-                            <li><i className="fab fa-twitter"></i></li>
-                            <i className="fab fa-pinterest"></i>
-                            <i className="fab fa-facebook"></i>
-                            <i className="fab fa-dribbble"></i>
-                        </ul>
-                    </div>
+        <div className="container-fluid bg__home">
+            <div className="row">
+                <div className="col-lg-2 leftSideBarWrapper">
+                    <ProfileSidebar/>
                 </div>
-                <div className="right__col">
+                <div className="col-lg-10 feed__wrapper">
+                    <div className="user__info">
+                        <div className="image-container">
+                            <img
+                                src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGVuc3xlbnwwfHwwfHw%3D&w=1000&q=80"
+                                alt="Farid-Junior"/>
+                            <div className="duv">
+                                <h4 className='f-l'>Huseyn Quliyev</h4>
+                                <p className='f-l'>huseynmg@code.edu.az</p>
+                                <div className="f-l btn" onClick={()=> setOpen(true)}>Create History</div>
+                            </div>
 
-                   <CreatePost/>
-                    <Post/>
-                    <Post/>
+                        </div>
 
+                        <h3>Add Friends</h3>
+                        <hr/>
+                        <UserSlider/>
+                        <hr/>
+                        <div className='createe'>
+                            <h3>Create Post</h3>
+                        </div>
+                        <div className='create__post'>
+                            <CreatePost setOpen={setOpen}/>
+                        </div>
+                        <Modal
+                            open={open}
+                            setOpen={setOpen}
+                            setPost={setPost}
+                        />
+
+
+
+                    </div>
 
                 </div>
+
             </div>
         </div>
     );

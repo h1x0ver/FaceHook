@@ -9,7 +9,7 @@ const AllUsers = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
         let token = JSON.parse(localStorage.getItem("Utoken"))
-        axios.get(`https://localhost:44347/api/User`,
+        axios.get(`https://localhost:44347/api/Friend/friendSuggestion`,
             {
                 headers: {
                     Authorization: "Bearer " + token
@@ -30,10 +30,11 @@ const AllUsers = () => {
                     <div className="row">
                         {users && users.map(u => <div className="col-lg-4 col-md-6">
                             <UserCard
-                                userimagesrc={`https://localhost:44347/img/${u.profileImage}`}
+                                key={u.id}
+                                userimagesrc={`https://localhost:44347/img/${u.imageUrl}`}
                                 firstname={u.firstname}
                                 lastname={u.lastname}
-
+                                id={u.id}
                             />
                         </div>)}
                     </div>

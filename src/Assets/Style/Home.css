@@ -7,3 +7,72 @@
         display: none;
     }
 }
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.custom-file-input::before {
+    content: 'Select some files';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #912424);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+.custom-file-input:hover::before {
+    border-color: black;
+}
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.post-text
+{
+    width: 100% !important ;
+    border: none;
+}
+.creaate-post-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    align-items: center;
+    border: none;
+    color: white;
+    background-color: rgb(27,116,228);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+textarea{
+    margin-top: 20px;
+    height: 60px;
+    border: none;
+    font-size: 20px;
+    outline: none;
+    resize: none;
+    margin-bottom: 40px;
+}
+
+.mydiv{
+    border-bottom: 1px solid silver;
+    margin-bottom: 10px;
+    padding: 10px 5px;
+
+}
+.mydiv p{
+    cursor: pointer;
+    color: red;
+}
+.post__modal{
+    padding: 20px 30px;
+}
+.user__info h5{
+    margin-left: 10px;
+}

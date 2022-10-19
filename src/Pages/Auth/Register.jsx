@@ -13,7 +13,7 @@ function Registers() {
         let newuser =  {
             username:x.username,
             firstname:x.firstname,
-            surname:x.surname,
+            lastname:x.lastname,
             email:x.email,
             password:x.password,
             confirmPassword: x.confirmPassword
@@ -34,7 +34,7 @@ function Registers() {
                 initialValues={
                     {
                         firstname:'',
-                        surname:"",
+                        lastname:"",
                         username:"",
                         email:"",
                         password:"",
@@ -46,8 +46,8 @@ function Registers() {
             >
                 {({errors,touched})=>
                     (
+
                         <Form className="reg-part">
-                            {/*{JSON.stringify(errors)}*/}
                             <div className="naming">
                                 <div className="rg-field">
                                     <label className='rg-lbl' htmlFor="firstname">firstname</label>

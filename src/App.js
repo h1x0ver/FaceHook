@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './Assets/Style/App.css'
-import {BrowserRouter, Routes, Route,} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route,} from "react-router-dom";
 import Base from './Router/BaseRoutes'
 import HomePage from "./Pages/Home/HomePage";
 import Profile from "./Pages/Profile/Profile";
@@ -13,13 +13,27 @@ import Messanger from "./Pages/Messanger/Messanger";
 import AllUsers from "./Pages/Friends/AllUsers";
 import Friends from "./Pages/Friends/Friends";
 import FriendsRequest from "./Pages/Friends/FriendsRequest";
+import ProtectedRoutes from "./Router/ProtectedRoutes";
 
 const App = () => {
+
+    const [auth,setAuth] = useState(JSON.parse(localStorage.getItem("auth")))
+    useEffect(()=>
+    {
+        if(JSON.parse(localStorage.getItem("auth"))===null)
+        {
+            localStorage.setItem("auth",JSON.stringify(false))
+            setAuth(JSON.parse(localStorage.getItem("auth")))
+        }
+    },[])
+    console.log(auth)
+
     return (
-            <BrowserRouter>
+            <Router>
                 <Routes>
                     <Route path="/register" element={<Register/>}/>
-                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/login" element={<Login setAuth={setAuth}/>}/>
+                    <Route element={<ProtectedRoutes auth={auth}/>}>
                     <Route path='/messanger' element={<Messanger/>}/>
                     <Route path='/' element={<Base><HomePage/></Base>}/>
                     <Route path='/settings' element={<Base><ProfileSettings/></Base>}/>
@@ -30,8 +44,9 @@ const App = () => {
                     <Route path='/friends' element={<Base><Friends/></Base>}/>
                     <Route path='/requests' element={<Base><FriendsRequest/></Base>}/>
                     <Route path='/SavedPost' element={<Base><SavedPost/></Base>}/>
+                    </Route>
                 </Routes>
-            </BrowserRouter>
+            </Router>
     );
 };
 
