@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import '../../Assets/Style/Profile.css'
 import {Formik, Form, Field} from 'formik'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {useJwt, isExpired, decodeToken} from "react-jwt"
 import ProfileSidebar from "../../Components/SiderBars/ProfileSidebar";
 
-const ResetPassword = () => {
+const ResetPassword = ({id}) => {
+    const [pd, setPd] = useState(null)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        setPd(decodeToken(JSON.parse(localStorage.getItem("Utoken"))))
+    }, [])
+
     return (
         <div className="container-fluid bg__home">
             <div className="row">
@@ -17,32 +24,31 @@ const ResetPassword = () => {
                         <div className="p-div">
                             <Formik
                                 initialValues={{
-                                    currpsw: "",
-                                    newpsw: "",
-                                    confirm: ""
+                                    oldPassword: "",
+                                    newPassword: "",
+                                    confirmPassword: ""
                                 }}
-                                onSubmit={(val) => {
-                                    let x = JSON.parse(localStorage.getItem('Utoken'))
-                                    let y = decodeToken(x)
-
+                                onSubmit={(x) => {
                                     let newPassword =
                                         {
-                                            id: y.id,
-                                            currentPassword: val.currpsw,
-                                            newPassword: val.newpsw,
-                                            confirmPassword: val.confirm
+                                            id: pd.id,
+                                            oldPassword: x.oldPassword,
+                                            newPassword: x.newPassword,
+                                            confirmPassword: x.confirmPassword
                                         }
-
-                                    let url = "http://ejtacmalik-001-site1.btempurl.com/api/Accounts/resetpassword"
+                                    console.log(newPassword)
+                                    let token = JSON.parse(localStorage.getItem("Utoken"))
+                                    let url = "https://localhost:44347/api/User/changePassword"
                                     fetch(url, {
                                         method: 'post',
                                         headers:
                                             {
                                                 "Content-Type": "application/json",
+                                                Authorization:"Bearer "+token
                                             },
                                         body: JSON.stringify(newPassword)
                                     }).then(resp => {
-                                        console.log(resp.status);
+                                       alert('Password Changed succesfuly')
                                     })
 
 
@@ -52,17 +58,17 @@ const ResetPassword = () => {
 
                                     <div className="p-field">
                                         <label className='p-label' htmlFor="p-name">Current Password</label>
-                                        <Field className='p-inp' id='p-name' name='currpsw' defaultValue={'sss'}/>
+                                        <Field className='p-inp' id='p-name' name='oldPassword'/>
                                     </div>
 
                                     <div className="p-field">
                                         <label className='p-label' htmlFor="p-name">New Password</label>
-                                        <Field className='p-inp' id='p-name' name='newpsw' defaultValue={'sss'}/>
+                                        <Field className='p-inp' id='p-name' name='newPassword'/>
                                     </div>
 
                                     <div className="p-field">
-                                        <label className='p-label' htmlFor="p-name">Repeat Password</label>
-                                        <Field className='p-inp' id='p-name' name='confirm' defaultValue={'sss'}/>
+                                        <label className='p-label' htmlFor="p-name">Confirm Password</label>
+                                        <Field className='p-inp' id='p-name' name='confirmPassword'/>
                                     </div>
 
                                     <input type="submit" value='Reset Password' className='p-sub'/>

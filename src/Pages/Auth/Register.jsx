@@ -86,7 +86,7 @@ function Registers() {
                                     {errors.confirmPassword&&touched.confirmPassword?<div className='reg-err'>{errors.confirmPassword}</div>:null}
                                 </div>
                                 <div className="rg-field">
-                                    <input className='rg-sub-inp' value='submit' type="submit"/>
+                                        <input className='rg-sub-inp' value='Create Account' type="submit"/>
                                     <p className='rg-sub-inp inpp' onClick={()=> navigate("/login")}>Do you have Account?</p>
                                 </div>
                             </div>

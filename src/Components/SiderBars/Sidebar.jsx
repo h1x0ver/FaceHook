@@ -8,39 +8,9 @@ import {Help, SettingsApplicationsOutlined} from "@material-ui/icons";
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
-import SpeechRecognition, {useSpeechRecognition} from 'react-speech-recognition'
 
-const Sidebar = ({redirect}) => {
+const Sidebar = () => {
     const route = useNavigate()
-    const command = [
-        {
-            command:["Go to *", "Open *"],
-            callback:(redirectPage) => setRedirectUrl(redirectPage),
-        }
-    ]
-    const [redirectUrl, setRedirectUrl] = useState("")
-    const {transcript} = useSpeechRecognition({command});
-    const pages = ["profile","users","addfriends","friends","requests","savedPost","reset", "user","profileSettings"];
-    const urls = {
-        home:"/",
-        profile:"/profile",
-        "add friends":"/add-friends",
-        "profile settings":"/profileSettings",
-        reset:"/reset",
-        friends:"/friends",
-        "Saved post":"savedPost"
-    }
-    if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
-        return null
-    }
-    let {redirect} = "";
-    if (redirectUrl){
-        if (pages.includes(redirectUrl)){
-            redirect = <Navigate replace to={urls[redirectUrl]}/>
-        }else {
-            redirect = <p>Could not find page: {redirectUrl}</p>
-        }
-    }
 
 
 
@@ -103,13 +73,7 @@ const Sidebar = ({redirect}) => {
                 <div style={{marginTop: "70px"}}>
 
                 </div>
-                <li onClick={SpeechRecognition.startListening}>
-                    <SidebarRow
-                        Icon={Help}
-                        title='Help'
-                    />
-                    <p id='transcript'>saying:{transcript}</p>
-                </li>
+
 
             </ul>
         </div>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
+import StoryModal from '@mui/material/Modal';
 import {useState} from "react";
 import axios from "axios";
 import '../../../Assets/Style/Home.css'
@@ -22,7 +22,7 @@ const style = {
     flexDirection: "column"
 };
 
-export default function BasicModal({setPost, open, setOpen}) {
+export default function BasicModal({setStory, open, setOpen}) {
     const handleClose = () => setOpen(false);
     const [title, setTitle] = useState('')
     const [fileImage, setFile] = useState(null)
@@ -36,7 +36,7 @@ export default function BasicModal({setPost, open, setOpen}) {
         }
 
         const token = JSON.parse(localStorage.getItem('Utoken'))
-        fetch('https://localhost:44347/api/Post/create', {
+        fetch('https://localhost:44347/api/Story/create', {
             method: "POST",
 
             headers: {
@@ -48,11 +48,11 @@ export default function BasicModal({setPost, open, setOpen}) {
         }).then(resp => {
             if (resp.status === 204) {
                 const token = JSON.parse(localStorage.getItem('Utoken'))
-                axios.get('https://localhost:44347/api/Post', {
+                axios.get('https://localhost:44347/api/Story', {
                     headers: {
                         Authorization: "Bearer " + token
                     }
-                }).then(resp => setPost(resp.data))
+                }).then(resp => setStory(resp.data))
                 setOpen(false)
 
             }
@@ -64,7 +64,7 @@ export default function BasicModal({setPost, open, setOpen}) {
 
     return (
         <div>
-            <Modal
+            <StoryModal
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
@@ -72,7 +72,7 @@ export default function BasicModal({setPost, open, setOpen}) {
             >
                 <Box className='post__modal' sx={style}>
                     <div className='d-flex justify-content-between align-items-center w-100 mydiv'>
-                        <h3>Create Post</h3>
+                        <h3>Create Story</h3>
                         <p onClick={() => handleClose()}>x</p>
                     </div>
                     <div className='user__info d-flex align-items-center w-100 '>
@@ -81,16 +81,14 @@ export default function BasicModal({setPost, open, setOpen}) {
                         <h5>h1x0ver</h5>
                     </div>
                     <div className='m-content'>
-                        <textarea placeholder='Whats your mind?' className={'post-text'} id="outlined-basic"
+                        <textarea placeholder='write title' className={'post-text'} id="outlined-basic"
                                   label="Outlined" variant="outlined" onChange={(e) => setTitle(e.target.value)}/>
-                        <input type="file" className="custom-file-input" onChange={(e) => setFile(e.target.files[0])}
+                        <input type="file" onChange={(e) => setFile(e.target.files[0])}
                                accept='image/*'/>
-                        <button className='creaate-post-btn' onClick={() => handlePost()}>Create Post</button>
+                        <button className='creaate-post-btn' onClick={() => handlePost()}>Create story</button>
                     </div>
-
-
                 </Box>
-            </Modal>
+            </StoryModal>
         </div>
     );
 }

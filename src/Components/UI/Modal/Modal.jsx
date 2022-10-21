@@ -83,8 +83,7 @@ export default function BasicModal({setPost, open, setOpen}) {
                     <div className='m-content'>
                         <textarea placeholder='Whats your mind?' className={'post-text'} id="outlined-basic"
                                   label="Outlined" variant="outlined" onChange={(e) => setTitle(e.target.value)}/>
-                        <input type="file" className="custom-file-input" onChange={(e) => setFile(e.target.files[0])}
-                               accept='image/*'/>
+                        <input type="file" className="" onChange={(e) => setFile(e.target.files[0])} accept='image/*'/>
                         <button className='creaate-post-btn' onClick={() => handlePost()}>Create Post</button>
                     </div>
 

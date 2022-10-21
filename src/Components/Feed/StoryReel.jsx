@@ -4,9 +4,13 @@ import Story from "./Story";
 import {SwiperSlide, Swiper} from "swiper/react";
 import 'swiper/css'
 import axios from "axios";
+import CreateHistory from "./CreateHistory";
+import StoryModal from "../UI/Modal/StoryModal";
 
 const StoryReel = () => {
     const [story, setStory] = useState([])
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
     useEffect(() => {
         let token = JSON.parse(localStorage.getItem("Utoken"))
         axios.get(`https://localhost:44347/api/Story`,
@@ -73,6 +77,14 @@ const StoryReel = () => {
 
                 </div>
             </Swiper>
+            {/*storyCreate*/}
+            <CreateHistory setOpen={setOpen} />
+            <StoryModal
+                open={open}
+                setOpen={setOpen}
+                setStory={setStory}
+            />
+
         </div>
     );
 };

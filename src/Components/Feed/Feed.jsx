@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Feed.css'
 import StoryReel from "./StoryReel";
 import CreatePost from "./CreatePost";
@@ -6,29 +6,26 @@ import Post from "./Post";
 import Modal from '../UI/Modal/Modal'
 
 import axios from 'axios'
-import CreateHistory from "./CreateHistory";
 
-const  Feed = () => {
-    const [post,setPost] = useState([])
+const Feed = () => {
+    const [post, setPost] = useState([])
+    const [story, setStory] = useState([])
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
-    useEffect(()=>
-    {
+    useEffect(() => {
         let token = JSON.parse(localStorage.getItem("Utoken"))
         axios.get(`https://localhost:44347/api/Post`,
             {
-                headers:{
-                    Authorization:"Bearer "+token
+                headers: {
+                    Authorization: "Bearer " + token
                 }
-            }).then(resp=> setPost(resp.data))
-    },[])
-
+            }).then(resp => setPost(resp.data))
+    }, [])
 
 
     return (
         <div className='feed'>
             <StoryReel/>
-            <CreateHistory/>
             <CreatePost setOpen={setOpen}/>
             <Modal
                 open={open}
@@ -36,9 +33,8 @@ const  Feed = () => {
                 setPost={setPost}
             />
             {
-                post&&post.map(e=>
-                {
-                    return(
+                post && post.map(e => {
+                    return (
                         <Post
                             key={e.id}
                             profilePic={`https://localhost:44347/img/${e.user.profileImage}`}

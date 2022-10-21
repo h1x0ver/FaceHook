@@ -12,7 +12,7 @@ import {IconButton} from "@material-ui/core";
 import {useDispatch} from "react-redux";
 import axios from "axios";
 import {decodeToken} from "react-jwt";
-
+import logo from '../../images/logo.png'
 
 const Header = () => {
 
@@ -51,7 +51,7 @@ const Header = () => {
             {/*header left*/}
             <div className="header__left">
                 <img
-                    src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/100px-Facebook_f_logo_%282019%29.svg.png'
+                    src={logo}
                     alt="gg"/>
                 <div className="header-input-search">
                     <div className="header__input">
