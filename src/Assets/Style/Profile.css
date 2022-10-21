@@ -7,6 +7,9 @@
     align-items: center;
     justify-content: center;
 }
+.feed__wrapper{
+    height: 2000px;
+}
 
 .p-div
 {

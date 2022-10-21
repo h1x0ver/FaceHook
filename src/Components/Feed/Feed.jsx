@@ -6,6 +6,7 @@ import Post from "./Post";
 import Modal from '../UI/Modal/Modal'
 
 import axios from 'axios'
+import CreateHistory from "./CreateHistory";
 
 const  Feed = () => {
     const [post,setPost] = useState([])
@@ -27,6 +28,7 @@ const  Feed = () => {
     return (
         <div className='feed'>
             <StoryReel/>
+            <CreateHistory/>
             <CreatePost setOpen={setOpen}/>
             <Modal
                 open={open}

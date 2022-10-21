@@ -5,6 +5,7 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import {SaveOutlined} from "@material-ui/icons";
 import axios from "axios";
+import Comment from "../Comment/Comment";
 
 
 const Post = ({profilePic, image, username, message,like,id}) => {
@@ -54,17 +55,12 @@ const Post = ({profilePic, image, username, message,like,id}) => {
                     <ThumbUpIcon/>
                     <p>Like {like}</p>
                 </div>
-
-
-                <div className="post__option">
-                    <ChatBubbleOutlineIcon/>
-                    <p>Comment</p>
-                </div>
                 <div className="post__option">
                     <SaveOutlined/>
                     <p onClick={()=>savePost()}>save</p>
                 </div>
             </div>
+            <Comment/>
 
         </div>
 

@@ -1,0 +1,1 @@
+bunlar Ui elementleri deyl esli cto o vaxt acmisdim sonra ici deyisilesi oldu neyse basa dusduz esas odu.

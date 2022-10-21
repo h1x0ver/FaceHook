@@ -1,24 +1,47 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Sidebar from "../../Components/SiderBars/Sidebar";
 import Post from "../../Components/Feed/Post";
+import axios from "axios";
 
 const SavedPost = () => {
+    const [savedPost,setSavedPost] = useState([])
+    useEffect(()=>
+    {
+        let token = JSON.parse(localStorage.getItem("Utoken"))
+        axios.get(`https://localhost:44347/api/Post/saved`,
+            {
+                headers:{
+                    Authorization:"Bearer "+token
+                }
+            }).then(resp=> setSavedPost(resp.data))
+    },[])
+    console.log(savedPost)
+
     return (
         <div style={{marginTop:'20px'}} className="container-fluid">
             <div  className="row">
                 <div className="col-lg-3 leftSideBarWrapper">
                     <Sidebar/>
                 </div>
-                <div className="col-lg-3 col-sm-6">
-                    <Post
-                        profilePic='https://yt3.ggpht.com/ytc/AMLnZu9K44a6ao-Tv-6ib3oY_-1RIen0nlNE_NwlsdL3=s900-c-k-c0x00ffffff-no-rj'
-                        message='Bu Java programlasdirilma dilidir cox maraglidir ve yaxsi bir dildir hamiya meslehet gorurem istifade edin qorxmayin'
-                        timestamp='This is a timestamp'
-                        username='Huseyn'
-                        image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc5rMh7sWQl0x3NmtYfLiuiUmu88RtjbOEcg&usqp=CAU'
+                {
+                    savedPost&&savedPost.map(e=>{
+                        return(
+                            <div className="col-lg-4 col-sm-6">
+                                <Post
+                                    key={e.id}
+                                    profilePic={`https://localhost:44347/img/${e.user.profileImage}`}
+                                    message={`${e.title}`}
+                                    username={e.user.username}
+                                    image={`https://localhost:44347/img/${e.imageName}`}
+                                    like={e.likeCount}
+                                    id={e.id}
 
-                    />
-                </div>
+                                />
+                            </div>
+                        )
+                    })
+                }
+
 
 
             </div>

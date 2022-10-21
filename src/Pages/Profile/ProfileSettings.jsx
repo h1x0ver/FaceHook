@@ -64,7 +64,7 @@ const ProfileSettings = ({id}) => {
                                             },
                                         body: JSON.stringify(editUser)
                                     }).then(resp => {
-                                        console.log(resp.status);
+                                        alert('Profile Updatet Succesfuly')
                                     })
 
 

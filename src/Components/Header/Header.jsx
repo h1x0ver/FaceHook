@@ -68,7 +68,7 @@ const Header = () => {
                                     serachUser.filter(e => e.firstname !== myDecodedToken.Firstname).filter(e => {
                                         if (inp === '') {
                                             return e
-                                        } else if (e.firstname.toLowerCase().includes(inp.toLowerCase()) || e.lastname.toLowerCase().includes(inp.toLowerCase())) {
+                                        } else if (e.firstname.toLowerCase().includes(inp.toLowerCase())) {
                                             return e
                                         }
                                     }).map(e => <li><Avatar
@@ -107,17 +107,7 @@ const Header = () => {
                 <IconButton>
                     <NotificationsActiveIcon/>
                 </IconButton>
-
-                <div className="header__dropdown">
-                    <div className="dropdown">
-                        <Avatar className='dropbtn'/>
-                        <div className="dropdown-content">
-                            <li>Settings</li>
-                            <li>log-out</li>
-                        </div>
-                    </div>
-                </div>
-
+                <Avatar className='dropbtn'/>
 
             </div>
             <div className="header__hamburger">

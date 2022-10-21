@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './Assets/Style/App.css'
-import {BrowserRouter as Router, Routes, Route,} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import Base from './Router/BaseRoutes'
 import HomePage from "./Pages/Home/HomePage";
 import Profile from "./Pages/Profile/Profile";
@@ -15,7 +15,9 @@ import ProfileSettings from "./Pages/Profile/ProfileSettings";
 import ResetPassword from "./Pages/Profile/ResetPassword";
 import User from "./Pages/User/User";
 
-const App = () => {
+
+
+const App = ({redirect}) => {
 
     const [auth,setAuth] = useState(JSON.parse(localStorage.getItem("auth")))
     useEffect(()=>
@@ -37,7 +39,7 @@ const App = () => {
                     <Route path='/' element={<Base><HomePage/></Base>}/>
                     <Route path='/profile' element={<Base><Profile/></Base>}/>
                     <Route path='/users' element={<Base><AllUsers/></Base>}/>
-                    <Route path='/add-friends' element={<Base><AllUsers/></Base>}/>
+                    <Route path='/addfriends' element={<Base><AllUsers/></Base>}/>
                     <Route path='/friends' element={<Base><Friends/></Base>}/>
                     <Route path='/requests' element={<Base><FriendsRequest/></Base>}/>
                     <Route path='/savedPost' element={<Base><SavedPost/></Base>}/>
@@ -45,6 +47,7 @@ const App = () => {
                     <Route path='/user' element={<Base><User/></Base>}/>
                     <Route path='/profileSettings' element={<Base><ProfileSettings/></Base>}/>
                     </Route>
+                    {redirect}
                 </Routes>
             </Router>
     );
