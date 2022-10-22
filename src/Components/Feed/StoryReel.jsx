@@ -6,10 +6,12 @@ import 'swiper/css'
 import axios from "axios";
 import CreateHistory from "./CreateHistory";
 import StoryModal from "../UI/Modal/StoryModal";
+import GetStory from '../UI/Modal/GetStory';
 
 const StoryReel = () => {
     const [story, setStory] = useState([])
     const [open, setOpen] = React.useState(false);
+    const [openg,setOpeng] = useState(false)
     const handleOpen = () => setOpen(true);
     useEffect(() => {
         let token = JSON.parse(localStorage.getItem("Utoken"))
@@ -64,6 +66,7 @@ const StoryReel = () => {
                                 <SwiperSlide>
                                     <div className="col-3">
                                         <Story
+                                            setOpen={setOpeng}
                                             key={e.id}
                                             image={`https://localhost:44347/img/${e.imageName}`}
                                             profileSrc={`https://localhost:44347/img/${e.user.profileImage}`}
@@ -79,6 +82,12 @@ const StoryReel = () => {
             </Swiper>
             {/*storyCreate*/}
             <CreateHistory setOpen={setOpen} />
+
+            <GetStory
+                open={openg}
+                setOpen={setOpeng}
+
+            />
             <StoryModal
                 open={open}
                 setOpen={setOpen}

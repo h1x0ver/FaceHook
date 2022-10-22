@@ -1,16 +1,11 @@
 
-.profile-s
-{
+.profile-s {
     width: 100%;
     height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.feed__wrapper{
-    height: 2000px;
-}
-
 .p-div
 {
     width: 80%;
@@ -23,34 +18,6 @@
     animation: border-anime 3s infinite;
 }
 
-@keyframes border-anime
-{
-    0%
-    {
-        border-left-color: #d8fff9;
-        transition: 0.3s;
-    }
-    25%
-    {
-        border-top-color: #bdfff8;
-        transition: 0.3s;
-    }
-    50%
-    {
-        border-right-color: #ffcac6;
-        transition: 0.3s;
-    }
-    75%
-    {
-        border-bottom-color: #f86961;
-        transition: 0.3s;
-    }
-    100%
-    {
-        border-left-color: #eaafff;
-        transition: 0.3s;
-    }
-}
 
 .p-form
 {

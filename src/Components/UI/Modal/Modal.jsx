@@ -1,10 +1,11 @@
-import * as React from 'react';
+import React, {useEffect} from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import {useState} from "react";
 import axios from "axios";
 import '../../../Assets/Style/Home.css'
 import {Avatar} from "@material-ui/core";
+import SpeechRecognition, {useSpeechRecognition} from 'react-speech-recognition';
 
 const style = {
     position: 'absolute',
@@ -21,7 +22,6 @@ const style = {
     justifyContent: "center",
     flexDirection: "column"
 };
-
 export default function BasicModal({setPost, open, setOpen}) {
     const handleClose = () => setOpen(false);
     const [title, setTitle] = useState('')
@@ -38,13 +38,10 @@ export default function BasicModal({setPost, open, setOpen}) {
         const token = JSON.parse(localStorage.getItem('Utoken'))
         fetch('https://localhost:44347/api/Post/create', {
             method: "POST",
-
             headers: {
                 Authorization: "Bearer " + token
             },
             body: formdata
-
-
         }).then(resp => {
             if (resp.status === 204) {
                 const token = JSON.parse(localStorage.getItem('Utoken'))
@@ -54,13 +51,22 @@ export default function BasicModal({setPost, open, setOpen}) {
                     }
                 }).then(resp => setPost(resp.data))
                 setOpen(false)
-
             }
         })
+    }
+    const {transcript, resetTranscript} = useSpeechRecognition();
 
-
+    const micOnHandler = () => {
+        SpeechRecognition.startListening({continuous: true, language:'en,IN'});
     }
 
+    const micOffHandler = () => {
+        SpeechRecognition.stopListening();
+    }
+
+    useEffect(() => {
+        setTitle(transcript);
+    }, [transcript])
 
     return (
         <div>
@@ -73,7 +79,7 @@ export default function BasicModal({setPost, open, setOpen}) {
                 <Box className='post__modal' sx={style}>
                     <div className='d-flex justify-content-between align-items-center w-100 mydiv'>
                         <h3>Create Post</h3>
-                        <p onClick={() => handleClose()}>x</p>
+                        <p className='fw-bold' onClick={() => handleClose()}>x</p>
                     </div>
                     <div className='user__info d-flex align-items-center w-100 '>
                         <Avatar
@@ -81,8 +87,15 @@ export default function BasicModal({setPost, open, setOpen}) {
                         <h5>h1x0ver</h5>
                     </div>
                     <div className='m-content'>
-                        <textarea placeholder='Whats your mind?' className={'post-text'} id="outlined-basic"
+
+
+                        <textarea value={title} placeholder='Whats your mind?' className={'post-text'}
+                                  id="outlined-basic"
                                   label="Outlined" variant="outlined" onChange={(e) => setTitle(e.target.value)}/>
+                        <button type="button" className='micro-btn' onClick={micOnHandler}>Start</button>
+                        <button type="button" className='micro-btn' onClick={micOffHandler}>Stop</button>
+                        <button className='micro-btn' onClick={resetTranscript}>Reset</button>
+
                         <input type="file" className="" onChange={(e) => setFile(e.target.files[0])} accept='image/*'/>
                         <button className='creaate-post-btn' onClick={() => handlePost()}>Create Post</button>
                     </div>

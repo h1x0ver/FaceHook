@@ -3,7 +3,7 @@ import './UserInfo.css'
 import ProfileImage from "./ProfileImage";
 import ProfileInfo from "./ProfileInfo";
 import ProfileDataInfo from "./ProfileDataInfo";
-const UserInfo = () => {
+const AccountInfo = () => {
     return (
         <div>
             <div className="main-body">
@@ -27,4 +27,4 @@ const UserInfo = () => {
     );
 };
 
-export default UserInfo;
+export default AccountInfo;

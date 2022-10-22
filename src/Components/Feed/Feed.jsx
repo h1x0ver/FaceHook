@@ -9,7 +9,6 @@ import axios from 'axios'
 
 const Feed = () => {
     const [post, setPost] = useState([])
-    const [story, setStory] = useState([])
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     useEffect(() => {
@@ -21,7 +20,6 @@ const Feed = () => {
                 }
             }).then(resp => setPost(resp.data))
     }, [])
-
 
     return (
         <div className='feed'>
@@ -47,11 +45,7 @@ const Feed = () => {
                     )
                 })
             }
-
         </div>
     );
 };
-
 export default Feed;
-
-

@@ -14,6 +14,28 @@
     width: 100% !important ;
     border: none;
 }
+.micro-btn{
+    width: 30%;
+    border-radius: 15px;
+    border:none;
+    margin-bottom: 18px;
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: rgba(100, 149, 237, 0.89);
+    font-size: 16px;
+    color: white;
+    transition: 0.5s all ease-in-out;
+
+}
+.story-modal-image{
+    width: 450px;
+    height: 350px;
+    margin-top: 15px;
+
+}
+.micro-btn:hover{
+    background-color: rgb(78, 130, 229);
+}
 .creaate-post-btn{
     width: 100%;
     display: flex;
