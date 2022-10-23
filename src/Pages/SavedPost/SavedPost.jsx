@@ -23,24 +23,30 @@ const SavedPost = () => {
                 <div className="col-lg-3 leftSideBarWrapper">
                     <Sidebar/>
                 </div>
-                {
-                    savedPost&&savedPost.map(e=>{
-                        return(
-                            <div className="col-lg-4 col-sm-6">
-                                <Post
-                                    key={e.id}
-                                    profilePic={`https://localhost:44347/img/${e.user.profileImage}`}
-                                    message={`${e.title}`}
-                                    username={e.user.username}
-                                    image={`https://localhost:44347/img/${e.imageName}`}
-                                    like={e.likeCount}
-                                    id={e.id}
+                <div className="col-lg-9">
+                    <div className="row">
+                        {
+                            savedPost&&savedPost.map(e=>{
+                                return(
+                                    <div className="col-lg-6 col-sm-6">
+                                        <Post
+                                            key={e.id}
+                                            profilePic={`https://localhost:44347/img/${e.user.profileImage}`}
+                                            message={`${e.title}`}
+                                            username={e.user.username}
+                                            image={`https://localhost:44347/img/${e.imageName}`}
+                                            like={e.likeCount}
+                                            id={e.id}
 
-                                />
-                            </div>
-                        )
-                    })
-                }
+                                        />
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+
+
 
 
 

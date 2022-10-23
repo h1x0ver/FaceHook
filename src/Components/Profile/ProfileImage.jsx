@@ -11,7 +11,8 @@ const ProfileImage = ({imageSrc}) => {
                         <img src={imageSrc} alt="Admin"
                              className="rounded-circle" width="150"/>
                         <div className="mt-3">
-                            <button onClick={()=> route('/profileSettings')} className="edit-btn">Edit Profile</button>
+                            <button onClick={()=> route('/profileSettings')} className="edit-btn">
+                            </button>
                         </div>
                     </div>
                 </div>

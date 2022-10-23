@@ -13,6 +13,7 @@ import {useDispatch} from "react-redux";
 import axios from "axios";
 import {decodeToken} from "react-jwt";
 import logo from '../../images/logo.png'
+import {Link} from "react-router-dom";
 
 const Header = () => {
 
@@ -116,10 +117,14 @@ const Header = () => {
                 </div>
                 <div className="header__hamburger__body">
                     <ul>
-                        <li>Home</li>
-                        <li>Home</li>
-                        <li>Home</li>
-                        <li>Home</li>
+                        <Link to='/'><li>Home</li></Link>
+                        <Link to='/savedPost'><li>Saved Post</li></Link>
+                        <Link to='/add-friends'><li>Add Friends</li></Link>
+                        <Link to='requests'><li>Friend Request</li></Link>
+                        <Link to='/friends'><li>Friends</li></Link>
+                        Li<li>Profile</li>
+                        <li>Change Profile Data</li>
+                        <li>Change Password</li>
                     </ul>
                 </div>
             </div>

@@ -11,6 +11,7 @@
     word-break: break-all;
     margin-right: 10px;
     object-fit: contain;
+    cursor: pointer;
 }
 
 

@@ -14,6 +14,7 @@ import ProtectedRoutes from "./Router/ProtectedRoutes";
 import ProfileSettings from "./Pages/Profile/ProfileSettings";
 import ResetPassword from "./Pages/Profile/ResetPassword";
 import User from "./Pages/User/User";
+import Messanger from "./Pages/Messanger/Messanger";
 const App = () => {
 
     const [auth,setAuth] = useState(JSON.parse(localStorage.getItem("auth")))
@@ -34,6 +35,7 @@ const App = () => {
                     <Route path="/login" element={<Login setAuth={setAuth}/>}/>
                     <Route element={<ProtectedRoutes auth={auth}/>}>
                         <Route path='/' element={<Base><HomePage/></Base>}/>
+                        <Route path='/messanger' element={<Base><Messanger/></Base>}/>
                         <Route path='/profile' element={<Base><Profile/></Base>}/>
                         <Route path='/users' element={<Base><AllUsers/></Base>}/>
                         <Route path='/add-friends' element={<Base><AllUsers/></Base>}/>
