@@ -3,7 +3,34 @@
     position: fixed;
 
 }
-
 .sidebar ul {
     padding: 0;
+}
+.msidebar{
+    padding: 0;
+    position: fixed;
+    height: 100vh;
+    background-color: white;
+}
+.msidebar ul {
+    padding:0;
+}
+.search__input{
+    display: flex;
+    justify-content: center;
+}
+.search__input input{
+    outline: none;
+    border: none;
+    background-color: rgba(213, 213, 213, 0.36);
+    font-size: 19px;
+    color: black;
+    padding: 8px 18px;
+    width: 100%;
+    margin-bottom: 10px;
+
+}
+
+.active-chat-user {
+    background-color: lightgray;
 }

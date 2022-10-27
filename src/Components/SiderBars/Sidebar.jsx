@@ -1,18 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Sidebar.css'
 import SidebarRow from "./SidebarRow";
 import ChatIcon from '@material-ui/icons/Chat';
 import Save from "@material-ui/icons/Bookmark";
-import {Navigate, useNavigate} from "react-router-dom";
+import {Navigate, useNavigate, useParams} from "react-router-dom";
 import {Help, SettingsApplicationsOutlined} from "@material-ui/icons";
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
+import {decodeToken} from "react-jwt";
 
 const Sidebar = () => {
     const route = useNavigate()
 
 
+    let tokenByCurrent = JSON.parse(localStorage.getItem("Utoken"))
+    const decodettoken = decodeToken(tokenByCurrent);
 
     return (
         <div className={'sidebar'}>
@@ -24,10 +27,10 @@ const Sidebar = () => {
                     />
                 </li>
 
-                <li onClick={() => route('/chat')}>
+                <li onClick={() => route('/messenger')}>
                     <SidebarRow
                         Icon={ChatIcon}
-                        title='Messanger'
+                        title='Messenger'
                     />
 
                 </li>
@@ -38,10 +41,6 @@ const Sidebar = () => {
                     />
 
                 </li>
-                <hr/>
-                <div style={{marginTop: "50px"}}>
-
-                </div>
                 <li onClick={() => route('/add-friends')}>
                     <SidebarRow
                         Icon={PersonAddAltIcon}
@@ -60,21 +59,12 @@ const Sidebar = () => {
                         title='All Friends'
                     />
                 </li>
-                <hr className='mt-5'/>
-                <div style={{marginTop: "70px"}}>
-
-                </div>
-                <li onClick={() => route('/profile')}>
+                <li onClick={()=> route(`/profile/${decodettoken.Id}`)}>
                     <SidebarRow
                         Icon={SettingsApplicationsOutlined}
-                        title='settings'
+                        title='Profile'
                     />
-                </li>       <hr className='mt-5'/>
-                <div style={{marginTop: "70px"}}>
-
-                </div>
-
-
+                </li>
             </ul>
         </div>
     );

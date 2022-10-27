@@ -8,6 +8,7 @@ class AuthService extends HttpClient {
 
     register(body){
         return this.post("register", body);
+
     }
 }
 

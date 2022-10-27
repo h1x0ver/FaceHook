@@ -2,7 +2,9 @@
     display: flex;
     align-items: center;
     padding: 10px;
+    /*width: 300px;*/
     cursor: pointer;
+    transition: 0.1s all inherit;
 }
 
 .sidebarRow:hover{
@@ -11,8 +13,10 @@
 }
 
 .sidebarRow > h4 {
-    margin-left: 20px;
-    font-weight: 600;
+    margin-left: 8px;
+    font-size: 20px;
+
+
 }
 
 .sidebarRow > .MuiSvgIcon-root {

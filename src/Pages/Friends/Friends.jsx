@@ -23,11 +23,14 @@ const Friends = () => {
     return (
         <div className="container-fluid bg__home">
             <div className="row">
-                <div className="col-lg-3 leftSideBarWrapper">
+                <div className="col-lg-2 leftSideBarWrapper">
                     <Sidebar/>
                 </div>
-                <div className="col-lg-9 user-friends">
-                    <input type="text" className='friens__search' placeholder='serach'/>
+                <div className="col-lg-10 user-friends">
+                            <div className='s-inp'>
+                                <input type="text" className='friens__search' placeholder='serach'/>
+
+                            </div>
                     <div className="row">
                         {friends && friends.map(u => <div className="col-lg-4 col-md-6">
                             <FriendCard

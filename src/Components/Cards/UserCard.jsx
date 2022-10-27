@@ -1,28 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./UserCard.css";
 import axios from "axios";
 
 const UserCard = ({firstname, lastname, userimagesrc, id}) => {
+    useEffect(()=>{
+        const token = JSON.parse(localStorage.getItem('Utoken'))
+        axios.get('https://localhost:44347/api/Friend/friendSuggestion', {
+            headers: {
+                Authorization: "Bearer " + token
+            }
+        })
+    },[])
     const addFriend = (x) => {
+
         const token = JSON.parse(localStorage.getItem('Utoken'))
         fetch(`https://localhost:44347/api/Friend/addFriend/${x}`, {
             method: "POST",
             headers:{
                 Authorization:"Bearer "+token
             },
-        }).then(resp=> {
-            if (resp.status === 204) {
-                const token = JSON.parse(localStorage.getItem('Utoken'))
-                axios.get('https://localhost:44347/api/Friend/friendSuggestion', {
-                    headers: {
-                        Authorization: "Bearer " + token
-                    }
-                }).then(resp=> (resp.data))
-            }
-        })
+        }).then(resp => resp.data)
     }
-
-
     return (
         <div className="card">
             <div className="card-image">

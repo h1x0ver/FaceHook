@@ -16,7 +16,7 @@ const Sidebar = () => {
     return (
         <div className={'sidebar'} style={{height:"100vh", backgroundColor:"white"}}>
             <ul>
-                <li onClick={() => route('/profile')}>
+                <li>
                     <SidebarRow
                         src="https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper-thumbnail.png"
                         title='Profile'

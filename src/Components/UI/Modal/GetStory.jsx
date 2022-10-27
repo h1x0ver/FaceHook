@@ -1,8 +1,9 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import '../../../Assets/Style/Home.css'
-import {Avatar} from "@material-ui/core";
 import GetStory from '@mui/material/Modal';
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 const style = {
     position: 'absolute',
@@ -22,6 +23,18 @@ const style = {
 
 export default function BasicModal({open, setOpen}) {
     const handleClose = () => setOpen(false);
+    const [story, setStory] = useState([])
+
+     useEffect(()=>  {
+         let token = JSON.parse(localStorage.getItem('Utoken'))
+         axios.get(`https://localhost:44347/api/Story/`,{
+             method:"GET",
+             headers:{
+                 Authorization: "Bearer " + token
+             }
+         }).then(resp => setStory(resp.data))
+     },[])
+
     return (
         <div>
             <GetStory
@@ -30,18 +43,19 @@ export default function BasicModal({open, setOpen}) {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box className='post__modal' sx={style}>
+                <Box className='ppost__modal' sx={style}>
                     <div className='d-flex justify-content-between align-items-center w-100 mydiv'>
-                        <h3>User Story</h3>
+                        <>User Story</>
                         <p onClick={() => handleClose()}>x</p>
                     </div>
-                    <div className='user__info d-flex align-items-center w-100 '>
-                        <Avatar
-                            src='https://st3.depositphotos.com/1000423/16114/i/450/depositphotos_161140142-stock-photo-touching-planet-with-finger.jpg'/>
-                        <h5>h1x0ver</h5>
-                    </div>
                     <div className='m-content'>
-                        <img className='story-modal-image' src="https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000"alt=""/>
+                        {
+                            story&&story.map(e => {
+                                return(
+                                    <img className='story-modal-image' src={`https://localhost:44347/img/${e.imageName}`} alt=""/>
+                                )
+                            })
+                        }
                     </div>
                 </Box>
             </GetStory>

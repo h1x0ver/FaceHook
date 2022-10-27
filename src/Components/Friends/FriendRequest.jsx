@@ -14,7 +14,10 @@ const FriendRequest = ({imgSrc, username,id}) => {
     }
     return (
         <div className="friend__reques">
-            <img src={imgSrc} alt="gg"/>
+            {imgSrc!==null?(
+                <img src={imgSrc} className="card-img-top" alt="gg"/>
+
+            ):(<h1>Hrellgkjrgjnrgnrehioguj;nz</h1>)}
             <h3>{username}</h3>
             <button type='button' onClick={()=>acceptFriend(id)}>accept friends</button>
             <button type='button'>reject friend</button>

@@ -50,7 +50,7 @@ const ProfileSettings = ({id}) => {
                                             email: x.prmail,
                                         }
 
-                                    console.log(editUser)
+                                    // console.log(editUser)
 
                                     let token = JSON.parse(localStorage.getItem("Utoken"))
                                     let url = "https://localhost:44347/api/User/userUpdate"

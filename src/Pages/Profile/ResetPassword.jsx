@@ -36,7 +36,7 @@ const ResetPassword = ({id}) => {
                                             newPassword: x.newPassword,
                                             confirmPassword: x.confirmPassword
                                         }
-                                    console.log(newPassword)
+                                    // console.log(newPassword)
                                     let token = JSON.parse(localStorage.getItem("Utoken"))
                                     let url = "https://localhost:44347/api/User/changePassword"
                                     fetch(url, {

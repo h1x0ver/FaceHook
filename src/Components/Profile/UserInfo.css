@@ -1,10 +1,14 @@
 .edit-btn{
-    padding: 10px 100px;
+    padding: 10px 50px;
     border: none;
     background-color: black;
     color: white;
     border-radius: 5px;
     transition: 0.3s all linear;
+    cursor: pointer;
+}
+.sss input[type="file"]{
+    display: none;
 }
 .edit-btn:hover{
     background-color: white;

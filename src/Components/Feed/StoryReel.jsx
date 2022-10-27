@@ -63,11 +63,10 @@ const StoryReel = () => {
                     {
                         story && story.map(e => {
                             return (
-                                <SwiperSlide>
+                                <SwiperSlide key={e.id}>
                                     <div className="col-3">
                                         <Story
                                             setOpen={setOpeng}
-                                            key={e.id}
                                             image={`https://localhost:44347/img/${e.imageName}`}
                                             profileSrc={`https://localhost:44347/img/${e.user.profileImage}`}
                                             title={`${e.title}`}

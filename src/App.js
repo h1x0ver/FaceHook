@@ -35,15 +35,17 @@ const App = () => {
                     <Route path="/login" element={<Login setAuth={setAuth}/>}/>
                     <Route element={<ProtectedRoutes auth={auth}/>}>
                         <Route path='/' element={<Base><HomePage/></Base>}/>
-                        <Route path='/messanger' element={<Base><Messanger/></Base>}/>
-                        <Route path='/profile' element={<Base><Profile/></Base>}/>
+                        <Route path='/messenger' element={<Base><Messanger/></Base>}/>
+                        <Route path='/messenger/:username' element={<Base><Messanger/></Base>}/>
+                        <Route path='/profile/:id' element={<Base><Profile/></Base>}/>
                         <Route path='/users' element={<Base><AllUsers/></Base>}/>
                         <Route path='/add-friends' element={<Base><AllUsers/></Base>}/>
+
                         <Route path='/friends' element={<Base><Friends/></Base>}/>
                         <Route path='/requests' element={<Base><FriendsRequest/></Base>}/>
                         <Route path='/savedPost' element={<Base><SavedPost/></Base>}/>
                         <Route path='/reset' element={<Base><ResetPassword/></Base>}/>
-                        <Route path='/user' element={<Base><User/></Base>}/>
+                        <Route path='/user/:id' element={<Base><User/></Base>}/>
                         <Route path='/profileSettings' element={<Base><ProfileSettings/></Base>}/>
 
                     </Route>

@@ -6,7 +6,7 @@ const regsVal = object(
     {
             firstname:string().required("must be at least 3 letters").min(3),
         lastname:string().required("must be at least 3 letters").min(3),
-        username:string().required("must be at least 8 letters").min(8),
+        username:string().required("must be at least 6 letters").min(6),
         email:string().required("not email format").email(),
         password:string().required("must be at least 8 letters").min(8),
         confirmPassword:Yup.string()

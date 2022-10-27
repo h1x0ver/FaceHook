@@ -49,20 +49,15 @@ const StoryReel = () => {
                 <div className="row">
 
                     {
-                        users&&users.map(e => {
+                        users && users.map(e => {
                             return (
                                 <SwiperSlide>
-                                    <div className="salam">
-                                    <div className="">
-                                            <UserCard
-                                                key={e.id}
-                                                userimagesrc={`https://localhost:44347/img/${e.imageUrl}`}
-                                                firstname={e.firstname}
-                                                lastname={e.lastname}
-                                                id={e.id}
-                                            />
-                                        </div>
-                                    </div>
+                                    <UserCard
+                                        userimagesrc={`https://localhost:44347/img/${e.imageUrl}`}
+                                        firstname={e.firstname}
+                                        lastname={e.lastname}
+                                        id={e.id}
+                                    />
                                 </SwiperSlide>
                             )
                         })

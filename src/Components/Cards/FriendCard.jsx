@@ -1,7 +1,5 @@
 import React from 'react';
 import "./UserCard.css";
-import axios from "axios";
-
 const UserCard = ({firstname, lastname, userimagesrc, id}) => {
     //delete friend
     const deleteFriend = (e) => {

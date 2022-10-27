@@ -13,7 +13,7 @@ import {useDispatch} from "react-redux";
 import axios from "axios";
 import {decodeToken} from "react-jwt";
 import logo from '../../images/logo.png'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Header = () => {
 
@@ -28,7 +28,7 @@ const Header = () => {
         }
     }
     const dispatch = useDispatch()
-
+    const route = useNavigate()
     const [serachUser, setSearchUser] = useState([])
     const [inp, setInp] = useState("")
     let tokenByCurrent = JSON.parse(localStorage.getItem("Utoken"))
@@ -52,6 +52,7 @@ const Header = () => {
             {/*header left*/}
             <div className="header__left">
                 <img
+                    onClick={()=> route('/')}
                     src={logo}
                     alt="gg"/>
                 <div className="header-input-search">
@@ -117,14 +118,15 @@ const Header = () => {
                 </div>
                 <div className="header__hamburger__body">
                     <ul>
-                        <Link to='/'><li>Home</li></Link>
-                        <Link to='/savedPost'><li>Saved Post</li></Link>
-                        <Link to='/add-friends'><li>Add Friends</li></Link>
-                        <Link to='requests'><li>Friend Request</li></Link>
-                        <Link to='/friends'><li>Friends</li></Link>
-                        Li<li>Profile</li>
-                        <li>Change Profile Data</li>
-                        <li>Change Password</li>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/savedPost'>Saved Post </Link></li>
+                        <li><Link to='/messanger'>Messanger</Link></li>
+                        <li><Link to='/add-friends'>Add Friends </Link></li>
+                        <li><Link to='requests'>Friend Request </Link></li>
+                        <li><Link to='/friends'>Friends </Link></li>
+                        <li><Link to={'/profile'}>Profile</Link></li>
+                        <li><Link to={'/'}>Profile</Link></li>
+                        <li><Link to={'/profile'}>Profile</Link></li>
                     </ul>
                 </div>
             </div>
