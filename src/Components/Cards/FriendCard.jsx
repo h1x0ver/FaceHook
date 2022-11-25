@@ -25,8 +25,8 @@ const UserCard = ({firstname, lastname, userimagesrc, id}) => {
             <div className="card-body d-flex justify-content-center">
                 <h5 className="card-title">{firstname} {lastname}</h5>
             </div>
-            <div className="card-button d-flex">
-                <button type="button" className="btn ml-5 " onClick={()=>deleteFriend(id)}>Delete Friend</button>
+            <div className="card-button d-flex w-100">
+                <button type="button" className="btn " onClick={()=>deleteFriend(id)}>Delete Friend</button>
             </div>
         </div>
     );

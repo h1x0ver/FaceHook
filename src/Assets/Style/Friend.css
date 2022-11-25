@@ -1,14 +1,35 @@
 .friend__reques{
     display: flex;
     height: 100px;
-    justify-content: space-around;
-    background-color: teal;
+    width: 100%;
+    justify-content: space-between;
+    background-color:silver;
     margin-top: 18px;
     align-items: center;
+    padding: 0 10px;
 
 
 }
-
+.friend-req  {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.card .acceps {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.card  .card__b{
+    display: flex;
+    justify-content: center;
+}
+.card .acceps  button{
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #89efef;
+}
 .friend__reques img{
     border-radius: 100%;
     height: 90%;
@@ -38,6 +59,7 @@
     justify-content: center;
     margin-top: 320px;
 }
+
 .s-inp{
     display: flex;
     justify-content: center;

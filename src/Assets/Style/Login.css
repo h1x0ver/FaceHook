@@ -173,7 +173,21 @@
 }
 
 
-
+.register_btn {
+    background-color: black;
+    margin-top: 10px;
+    padding: 7px 40px;
+    color: white;
+    font-size: 19px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.2s all ease-in-out;
+    font-weight: bold;
+}
+.register_btn:hover{
+    background-color: white;
+    color: black;
+}
 @media(max-width:900px)
 {
     .logged

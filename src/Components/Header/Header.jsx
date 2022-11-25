@@ -6,7 +6,6 @@ import Group from '@material-ui/icons/Group';
 import Message from '@material-ui/icons/Message';
 import AddIcon from '@material-ui/icons/Add';
 import ForumIcon from '@material-ui/icons/Forum';
-import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import {Avatar} from "@material-ui/core";
 import {IconButton} from "@material-ui/core";
 import {useDispatch} from "react-redux";
@@ -14,6 +13,7 @@ import axios from "axios";
 import {decodeToken} from "react-jwt";
 import logo from '../../images/logo.png'
 import {Link, useNavigate} from "react-router-dom";
+import Logout from "@mui/icons-material/Logout";
 
 const Header = () => {
 
@@ -33,7 +33,10 @@ const Header = () => {
     const [inp, setInp] = useState("")
     let tokenByCurrent = JSON.parse(localStorage.getItem("Utoken"))
     const myDecodedToken = decodeToken(tokenByCurrent);
-
+    const handleLogOut = () => {
+        localStorage.removeItem("Utoken")
+        route("/login")
+    }
     useEffect(() => {
         let token = JSON.parse(localStorage.getItem("Utoken"))
         axios.get(`https://localhost:44347/api/User`,
@@ -85,13 +88,13 @@ const Header = () => {
             {/*header middle*/}
             <div className="header__middle">
                 <div className="header__option header__option--active">
-                    <HomeIcon fontSize="large"/>
+                    <HomeIcon onClick={() => route('/')} fontSize="large"/>
                 </div>
                 <div className="header__option">
-                    <Group fontSize="large"/>
+                    <Group fontSize="large" onClick={() => route('/friends')}/>
                 </div>
                 <div className="header__option">
-                    <Message fontSize="large"/>
+                    <Message fontSize="large" onClick={() => route('/messenger')}/>
                 </div>
             </div>
 
@@ -99,17 +102,16 @@ const Header = () => {
             <div className="header__right">
 
                 <IconButton>
-                    <AddIcon/>
+                       <AddIcon onClick={()=> route('/add-friends')}/>
                 </IconButton>
 
                 <IconButton>
-                    <ForumIcon/>
+                    <ForumIcon onClick={()=>route('/messenger')}/>
                 </IconButton>
 
                 <IconButton>
-                    <NotificationsActiveIcon/>
+                    <Logout onClick={(handleLogOut)}/>
                 </IconButton>
-                <Avatar className='dropbtn'/>
 
             </div>
             <div className="header__hamburger">

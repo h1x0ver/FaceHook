@@ -6,7 +6,6 @@ import 'swiper/css'
 import axios from "axios";
 import CreateHistory from "./CreateHistory";
 import StoryModal from "../UI/Modal/StoryModal";
-import GetStory from '../UI/Modal/GetStory';
 
 const StoryReel = () => {
     const [story, setStory] = useState([])
@@ -26,7 +25,7 @@ const StoryReel = () => {
     console.log(story)
     return (
 
-        <div className='storyReel'>
+        <div className='storyReel mt-2'>
             <Swiper
                 spaceBetween={50}
                 breakpoints={{
@@ -69,7 +68,6 @@ const StoryReel = () => {
                                             setOpen={setOpeng}
                                             image={`https://localhost:44347/img/${e.imageName}`}
                                             profileSrc={`https://localhost:44347/img/${e.user.profileImage}`}
-                                            title={`${e.title}`}
                                         />
                                     </div>
                                 </SwiperSlide>
@@ -79,14 +77,7 @@ const StoryReel = () => {
 
                 </div>
             </Swiper>
-            {/*storyCreate*/}
             <CreateHistory setOpen={setOpen} />
-
-            <GetStory
-                open={openg}
-                setOpen={setOpeng}
-
-            />
             <StoryModal
                 open={open}
                 setOpen={setOpen}

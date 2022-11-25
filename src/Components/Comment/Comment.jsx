@@ -28,14 +28,17 @@ const Comment = () => {
                 ))}
 
                 <div className="comment-flexbox">
-                    <h3 className='comment-text'>add comment</h3>
+                    <h3 className='comment-text'>Add comment</h3>
                     <input
                         type="text"
                         className='input-box'
                         value={comment}
                         onChange={onChangeHandler}
+                        placeholder="Type here..."
                     />
-                    <button className='comment-button' onClick={onClickhandler}>Send</button>
+                    <div className="comment-button-container">
+                        <button className='comment-button' onClick={onClickhandler}>Send</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@ import Sidebar from "../../Components/SiderBars/Sidebar";
 import Post from "../../Components/Feed/Post";
 import axios from "axios";
 
+
 const SavedPost = () => {
     const [savedPost,setSavedPost] = useState([])
     useEffect(()=>
@@ -20,15 +21,15 @@ const SavedPost = () => {
     return (
         <div style={{marginTop:'20px'}} className="container-fluid">
             <div  className="row">
-                <div className="col-lg-3 leftSideBarWrapper">
+                <div className="col-lg-2 leftSideBarWrapper">
                     <Sidebar/>
                 </div>
-                <div className="col-lg-9">
+                <div className="col-lg-10">
                     <div className="row">
                         {
-                            savedPost&&savedPost.map(e=>{
+                            savedPost.length > 0 ? savedPost.map(e=>{
                                 return(
-                                    <div className="col-lg-6 col-sm-6">
+                                    <div className="col-lg-6 col-sm-6 salamlae">
                                         <Post
                                             key={e.id}
                                             profilePic={`https://localhost:44347/img/${e.user.profileImage}`}
@@ -41,15 +42,10 @@ const SavedPost = () => {
                                         />
                                     </div>
                                 )
-                            })
+                            }):<div className='laod'> <h1>You dont have saved post</h1></div>
                         }
                     </div>
                 </div>
-
-
-
-
-
             </div>
         </div>
     );

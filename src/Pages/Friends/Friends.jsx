@@ -27,12 +27,9 @@ const Friends = () => {
                     <Sidebar/>
                 </div>
                 <div className="col-lg-10 user-friends">
-                            <div className='s-inp'>
-                                <input type="text" className='friens__search' placeholder='serach'/>
 
-                            </div>
                     <div className="row">
-                        {friends && friends.map(u => <div className="col-lg-4 col-md-6">
+                        {friends.length > 0 ? friends.map(u => <div className="col-lg-4 col-md-6">
                             <FriendCard
                                 key={u.key}
                                 userimagesrc={`https://localhost:44347/img/${u.profileImage}`}
@@ -41,7 +38,8 @@ const Friends = () => {
                                 id={u.id}
 
                             />
-                        </div>)}
+                        </div>): <div className='laod'><h1>You dont have friends man,
+                            be a good person</h1></div>}
                     </div>
                 </div>
 

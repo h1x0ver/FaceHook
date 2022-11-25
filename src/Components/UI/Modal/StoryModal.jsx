@@ -76,13 +76,8 @@ export default function BasicModal({setStory, open, setOpen}) {
                         <p onClick={() => handleClose()}>x</p>
                     </div>
                     <div className='user__info d-flex align-items-center w-100 '>
-                        <Avatar
-                            src='https://st3.depositphotos.com/1000423/16114/i/450/depositphotos_161140142-stock-photo-touching-planet-with-finger.jpg'/>
-                        <h5>h1x0ver</h5>
                     </div>
-                    <div className='m-content'>
-                        <textarea placeholder='write title' className={'post-text'} id="outlined-basic"
-                                  label="Outlined" variant="outlined" onChange={(e) => setTitle(e.target.value)}/>
+                    <div className='m-content w-100'>
                         <input type="file" onChange={(e) => setFile(e.target.files[0])}
                                accept='image/*'/>
                         <button className='creaate-post-btn' onClick={() => handlePost()}>Create story</button>

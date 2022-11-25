@@ -22,7 +22,7 @@ function Registers() {
 
 
         authService.register(newuser).then(() => {
-            navigate('/')
+            navigate('/login')
         })
 
         setTimeout(() => {
@@ -82,7 +82,7 @@ function Registers() {
                                 </div>
                                 <div className="rg-field">
                                     <label className='rg-lbl' htmlFor="confirmPassword">Confirm Password</label>
-                                    <Field className='rg-inp' id='confirmPassword'  placeholder="Enter your Username" name='confirmPassword'/>
+                                    <Field className='rg-inp'  id='confirmPassword'  placeholder="Enter your Username" name='confirmPassword'/>
                                     {errors.confirmPassword&&touched.confirmPassword?<div className='reg-err'>{errors.confirmPassword}</div>:null}
                                 </div>
                                 <div className="rg-field">

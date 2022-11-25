@@ -32,5 +32,12 @@
 }
 
 .active-chat-user {
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.49);
+    border-radius: 10px;
+}
+.cls{
+    color: rgb(170,6,152);
+}
+.svp{
+    color: rgb(154,56,204);
 }

@@ -52,12 +52,11 @@ const Post = ({profilePic, image, username, message, like, id}) => {
             <div className="post__options">
                 <div className="post__option">
                     <ThumbUpIcon/>
-                    <i className="fa-solid fa-2x fa-thumbs-down"></i>
                     <p>Like {like}</p>
                 </div>
-                <div className="post__option">
+                <div onClick={() => savePost(id)} className="post__option">
                     <SaveOutlined/>
-                    <p onClick={() => savePost(id)}>save</p>
+                    <p>save</p>
                 </div>
             </div>
             <Comment/>

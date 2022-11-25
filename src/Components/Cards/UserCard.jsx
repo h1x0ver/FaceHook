@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./UserCard.css";
 import axios from "axios";
 
@@ -12,14 +12,14 @@ const UserCard = ({firstname, lastname, userimagesrc, id}) => {
         })
     },[])
     const addFriend = (x) => {
-
         const token = JSON.parse(localStorage.getItem('Utoken'))
         fetch(`https://localhost:44347/api/Friend/addFriend/${x}`, {
             method: "POST",
             headers:{
                 Authorization:"Bearer "+token
             },
-        }).then(resp => resp.data)
+        }).then(resp => resp.data);
+
     }
     return (
         <div className="card">

@@ -15,12 +15,15 @@ const Messanger = () => {
     let token = JSON.parse(localStorage.getItem('Utoken'))
     const decodettoken = decodeToken(token);
 
+
     useEffect(() => {
         axios.get(`https://localhost:44347/api/Chat/${activeUser.username}`, {
             headers: {
                 Authorization: "Bearer " + token
             }
-        }).then(({data}) => dispatch(setMessages(data.reverse())))
+        })
+            .then(({data}) => dispatch(setMessages(data.reverse())))
+
 
     }, [activeUser])
 
@@ -79,10 +82,11 @@ const Messanger = () => {
                         </>
                     }
                     {!activeUser && (
-                        <div className={'col-10'}>
+                        <div className={'col-10 d-flex w-100 justify-content-center'}>
                             <img style={{width: "100%"}}
                                  src="https://cdn.dribbble.com/users/99954/screenshots/6669081/no_messages_blank_state.png"
-                                 alt=""/>
+                                 alt=""
+/>
                         </div>
                     )}
                 </div>

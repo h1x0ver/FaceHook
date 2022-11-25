@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+    import React, {useEffect, useState} from 'react';
 import './Sidebar.css'
 import SidebarRow from "./SidebarRow";
 import ChatIcon from '@material-ui/icons/Chat';
@@ -13,17 +13,16 @@ import {decodeToken} from "react-jwt";
 const Sidebar = () => {
     const route = useNavigate()
 
-
     let tokenByCurrent = JSON.parse(localStorage.getItem("Utoken"))
     const decodettoken = decodeToken(tokenByCurrent);
 
     return (
-        <div className={'sidebar'}>
+        <div className={'sidebar mt-2'}>
             <ul>
                 <li onClick={() => route('/')}>
                     <SidebarRow
                         src="https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper-thumbnail.png"
-                        title='Huseyn Quliyev'
+                        title={decodettoken.Firstname}
                     />
                 </li>
 
